@@ -1,0 +1,25 @@
+.contenitore {
+  width: 200px;
+  background: #808080;
+  color: #ececec;
+  border-radius: 1vw;
+}
+
+.contenitore > ul {
+  padding: 20px;
+  list-style: none;
+}
+
+.contenitore > ul > li {
+  margin-bottom: 10px;
+}
+
+.contenitore > ul > li > a {
+  color: #ececec;
+  text-decoration: none;
+  font-family: 'BoldFont';
+}
+
+.contenitore > ul > li > a:hover {
+  color: #b8e80c;
+}

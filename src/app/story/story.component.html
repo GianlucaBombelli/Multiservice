@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<section aria-label="flyers-carousel">
+  <div class="carousel" data-carousel>
+    <button class="carousel-b prev" (click)="prevSlide()"><i class="fa-solid fa-square-caret-left"></i></button>
+    <button class="carousel-b next" (click)="nextSlide()"><i class="fa-solid fa-square-caret-right"></i></button>
+
+    <ul data-slides>
+      <li class="slide" *ngFor="let slide of slides; let i = index" [ngClass]="{'active': i === activeIndex}">
+        <img [src]="slide.image" [alt]="slide.alt" class="animation">
+      </li>
+    </ul>
+
+  </div>
+</section>
+<div class="title">
+  <h1>CHI SIAMO?</h1>
+</div>
+<div class="text">
+  <p class="storia">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. A hic itaque assumenda voluptate reprehenderit rerum maxime ex dicta incidunt iure maiores quia, eligendi ducimus odit fugiat, deleniti, cum quo aperiam.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, culpa! Tenetur consequatur similique natus reprehenderit minus nam incidunt illo doloremque quia minima excepturi, quam quod, aut saepe optio molestias voluptatum?
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptate alias eius sed sunt autem voluptatem praesentium blanditiis, molestiae sequi quibusdam illo porro cum exercitationem at iusto? Placeat, hic accusantium?
+  </p>
+  <h2 class="team">
+    IL NOSTRO TEAM
+  </h2>
+  <h2 class="politica">
+    POLITICA AZIENDALE
+  </h2>
+  <p class="policy">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quasi, suscipit quibusdam assumenda nisi repudiandae. Dolorem fuga explicabo a nostrum suscipit praesentium sapiente corporis. Aperiam quis maxime obcaecati ad accusantium.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium blanditiis quas ducimus explicabo quam minus sapiente, fugit a quos architecto, non pariatur recusandae maxime. Nobis facilis ea natus nam!
+  </p>
+  <h2 class="marchi">
+    MARCHI AFFILIATI
+  </h2>
+
+</div>
+
+<app-carosello></app-carosello>
+
+<app-carosello2></app-carosello2>
+
+
+<app-footer></app-footer>
+

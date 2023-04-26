@@ -1,0 +1,113 @@
+.header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  text-align: center;
+  position: relative;
+  background-color: #595959;
+  color: #ececec;
+  padding: 0.5vw;
+  border-radius: 0 0 3.5vw 3.5vw;
+  user-select: none;
+}
+
+.header > img {
+  height: 8vw;
+  position:relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.link {
+  font-family: 'BoldFont';
+  line-height: 8vw;
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+.link > .service > i {
+  color: #ececec;
+}
+
+.service:hover > i {
+  rotate: 90deg;
+  color: #b8e80c;
+  padding: 0 2px;
+}
+
+.show {
+  display: block;
+}
+
+.tenda {
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-50%) translateY(10%);
+  visibility: hidden;
+  animation-duration: 1s;
+}
+
+button:focus > .tenda {
+  visibility: visible;
+  z-index: 1;
+}
+
+.link:not(:active) {
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  -webkit-animation-name: bounce;
+  -webkit-animation-duration: 0.5s;
+}
+
+.social {
+  position: absolute;
+  width: 100vw;
+  border-radius: 3.5vw;
+  right: 0;
+}
+
+#instagram {
+  position: absolute;
+  width: 25px;
+  right: 0.5vw;
+  top: 5.5vw;
+}
+
+#facebook {
+  position: absolute;
+  width: 25px;
+  right: 1vw;
+  top: 6.5vw;
+}
+
+a {
+  text-decoration: none;
+  color: #ececec;
+  font-family: 'BoldFont';
+}
+
+a:hover {
+  color: #b8e80c;
+}
+
+.service {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: max-content;
+  font-size: 16px;
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}

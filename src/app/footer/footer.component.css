@@ -1,0 +1,27 @@
+footer {
+  background-color: #595959;
+  position: relative;
+  padding: 0.5vw 1vw 3vw 1vw;
+  color: #ececec;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+footer > img {
+  width: 15vw;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.legal-info {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0.5vw 1vw 0.5vw 1vw;
+  background-color: #353535;
+}
+
+.legal-info > p {
+  font-family: 'LightFont';
+}

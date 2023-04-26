@@ -1,0 +1,41 @@
+<div class="header">
+  <li class="link">
+    <a routerLink="/story">CHI SIAMO</a>
+  </li>
+  <li class="link">
+    <button class="service" onclick="myFunction()">
+      <a routerLink="/demolizioni">SERVIZI</a>
+      <app-tendina class="tenda" id="tenda"></app-tendina>
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </li>
+  <img src="assets/logo.svg" alt="logo not load">
+  <li class="link">
+    <a routerLink="/carrozzeria"> CONTATTI ED ASSISTENZA </a>
+  </li>
+  <li class="link">
+    PROMO
+  </li>
+  <div class="social">
+    <img id="instagram" src="assets/instagram.png" alt="icon not load">
+    <img id="facebook" src="assets/facebook.png" alt="icon not load">
+  </div>
+</div>
+<script>
+function myFunction() {
+  document.getElementById("tenda").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.service')) {
+    var dropdowns = document.getElementsByClassName("tenda");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>

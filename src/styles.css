@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'CommonFont';
+}
+
+body {
+  background: #ececec;
+}
+@font-face {
+  font-family: 'CommonFont';
+  src: url(fonts/Montserrat-Regular.ttf)
+}
+
+@font-face {
+  font-family: 'LightFont';
+  src: url(fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+  font-family: 'BoldFont';
+  src: url(fonts/Montserrat-SemiBold.ttf);
+}

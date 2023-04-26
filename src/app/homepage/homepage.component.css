@@ -1,0 +1,266 @@
+.carousel {
+  width: 80vw;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3.5vw;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 2vw 0 2vw 0;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  display: none;
+  opacity: 0;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.carousel-b {
+  position: absolute;
+  background: none;
+  z-index: 2;
+  color: rgba(176, 176, 176, 0.50);
+  font-size: 3vw;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0.5vw;
+  cursor: pointer;
+  border: none;
+  transition: 0.35s;
+}
+
+.carousel-b:hover,
+.carousel-b:active {
+  color: #b8e80c;
+
+}
+
+.carousel-b.next {
+  right: 0;
+}
+
+.animation {
+  animation-name: fade;
+  animation-duration: 0.5s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@media (max-width:760px) {
+  section {
+    display: none;
+  }
+}
+
+.ricerca {
+  background: #595959;
+  width: 80vw;
+  border-radius: 3.5vw;
+  height: 25vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 5fr 2fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  text-align: center;
+  color: #b8e80c;
+  font-family: 'BoldFont';
+  overflow: hidden;
+  margin-bottom: 2vw;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 3;
+  font-family: 'BoldFont';
+  line-height: 3vw;
+
+}
+
+.div2 {
+  grid-area: 1 / 3 / 2 / 5;
+  font-family: 'BoldFont';
+  border-left: 2px solid #b8e80c;
+  border-bottom: 2px solid #b8e80c;
+  border-radius: 0 0 0 0.5vw;
+  line-height: 3vw;
+  background: #808080;
+}
+
+.div3 {
+  grid-area: 2 / 1 / 3 / 3;
+  font-family: 'BoldFont';
+  line-height: 2.5vw;
+
+}
+
+.div4 {
+  grid-area: 2 / 3 / 3 / 5;
+  font-family: 'BoldFont';
+  line-height: 2.5vw;
+  position: relative;
+  text-align: left;
+}
+#borderleft {
+  border-left: 2px solid #b8e80c;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  border-left-style: groove;
+}
+#center {
+  text-align: center;
+}
+.auto {
+  color: #ececec;
+  width: 60%;
+  background: #808080;
+  padding: 0.2vw 0.5vw;
+  margin: 0.8vw 2vw;
+  height: 2.5vw;
+  border: none;
+  border-radius: 1vw;
+  outline: none;
+}
+.bottoni {
+  width: 20vw;
+  position: absolute;
+  right: 1vw;
+  top: 3vw;
+  height: 11vw;
+}
+.cerca {
+  position: absolute;
+  right: 1vw;
+  width: 8vw;
+  height: 5vw;
+  top: 0;
+  color: #ececec;
+  background: #a3ce0b;
+  border: none;
+  border-radius: 1vw;
+  font-family: 'BoldFont';
+  font-size: 18px;
+
+}
+.reset {
+  position: absolute;
+  right: 1vw;
+  width: 8vw;
+  height: 5vw;
+  bottom: 0;
+  color: #ececec;
+  background: #808080;
+  border: none;
+  border-radius: 1vw;
+  font-family: 'BoldFont';
+  font-size: 18px;
+
+}
+
+.div5 {
+  grid-area: 3 / 1 / 4 / 5;
+  font-family: 'BoldFont';
+  line-height: 2.5vw;
+  border-top: 2px solid #b8e80c;
+
+}
+
+.motore {
+  background: #808080;
+  color: #ececec;
+  border: none;
+  width: 58vw;
+  padding: 0.5vw 1vw;
+  border-radius: 1vw;
+  text-transform: uppercase;
+  outline: none;
+  }
+
+::placeholder {
+  color: #595959;
+}
+
+.mappa {
+  background: #595959;
+  width: 80vw;
+  border-radius: 3.5vw;
+  height: 35vw;
+  margin: auto;
+  text-align: center;
+  color: #b8e80c;
+  font-family: 'BoldFont';
+  overflow: hidden;
+  margin-bottom: 2vw;
+  position: relative;
+  border: 2px solid #b8e80c;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 10fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.mappa > .map > iframe {
+  width: 100%;
+  border-radius: 0 0 3.5vw 3.5vw;
+  height: 100%;
+
+}
+
+.map {
+  grid-area: 1 / 1 / 2 / 3;
+  width: 100%;
+}
+.Cressa {
+  grid-area: 2 / 1 / 3 / 2;
+  border-right: 2px solid #b8e80c;
+  line-height: 3vw;
+}
+.Novara {
+  grid-area: 2 / 2 / 3 / 3;
+  line-height: 3vw;
+}
+
+.where {
+  text-align: center;
+  margin-bottom: 2vw;
+  color: #595959;
+  font-size: 22px;
+}
+
+.where > h1 {
+  font-family: 'BoldFont';
+}

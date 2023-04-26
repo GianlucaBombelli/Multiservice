@@ -1,0 +1,62 @@
+<head>
+  </head>
+  <body>
+  <app-header></app-header>
+  <section aria-label="flyers-carousel">
+    <div class="carousel" data-carousel>
+      <button class="carousel-b prev" (click)="prevSlide()"><i class="fa-solid fa-square-caret-left"></i></button>
+      <button class="carousel-b next" (click)="nextSlide()"><i class="fa-solid fa-square-caret-right"></i></button>
+
+      <ul data-slides>
+        <li class="slide" *ngFor="let slide of slides; let i = index" [ngClass]="{'active': i === activeIndex}">
+          <img [src]="slide.image" [alt]="slide.alt" class="animation">
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <div class="ricerca">
+    <div class="div1">NUOVO</div>
+    <div class="div2">USATO</div>
+    <div class="div3"><h2>TARGHE DISPONIBILI</h2></div>
+    <div class="div4">
+      <div id="borderleft"></div>
+      <h2 id="center">RICERCA TRAMITE MODELLO AUTO</h2>
+      <div class="modelloauto">
+        <input class="auto" list="marca" placeholder="marca...">
+        <datalist id="marca">
+          <option value="AUDI">
+          <option value="ALFA ROMEO">
+          <option value="LAMBORGHINI">
+          <option value="RENAULT">
+          <option value="TOYOTA">
+        </datalist>
+        <input class="auto" placeholder="modello...">
+        <input class="auto" placeholder="versione...">
+      </div>
+      <div class="bottoni">
+        <button class="cerca">cerca</button>
+        <button class="reset">reset</button>
+      </div>
+    </div>
+    <div class="div5">
+      <h2>RICERCA TRAMITE CODICE MOTORE</h2>
+      <input type="search" class="motore" placeholder="Inserisci qui il codice motore...">
+    </div>
+  </div>
+  <div class="where"><h1>DOVE TROVARCI?</h1></div>
+  <div class="mappa">
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11159.784995336797!2d8.5069846!3d45.6318161!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47866970c199b209%3A0xd468163e559a6a8f!2sAUTODEMOLIZIONI%20MULTISERVICE%20S.R.L.!5e0!3m2!1sit!2snl!4v1681807197608!5m2!1sit!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="Cressa">
+      <h2>Cressa</h2>
+    </div>
+    <div class="Novara">
+      <h2>Novara</h2>
+    </div>
+
+  </div>
+  <app-footer></app-footer>
+  </body>
