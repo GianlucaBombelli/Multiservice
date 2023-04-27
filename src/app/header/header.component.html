@@ -21,21 +21,3 @@
     <img id="facebook" src="assets/facebook.png" alt="icon not load">
   </div>
 </div>
-<script>
-function myFunction() {
-  document.getElementById("tenda").classList.toggle("show");
-}
-
-window.onclick = function(event) {
-  if (!event.target.matches('.service')) {
-    var dropdowns = document.getElementsByClassName("tenda");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>

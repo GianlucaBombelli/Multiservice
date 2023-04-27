@@ -36,6 +36,7 @@ export class HomepageComponent {
     }, 7500);
   }
 
+
   constructor() { }
 
   ngOnInit() {

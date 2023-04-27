@@ -16,10 +16,10 @@ import { TendinaComponent } from './servizi/tendina/tendina.component';
 const routes: Routes = [
   {path: '', component : HomepageComponent},
   {path: 'home', component : HomepageComponent},
-  {path: 'story', component : StoryComponent, children: [
+  {path: 'story', component : StoryComponent, },
+  {path: 'servizi', component: DemolizioniComponent, children: [
     {path: ':id', component : StoryComponent}
   ]},
-  {path: 'demolizioni', component: DemolizioniComponent},
   {path: 'carrozzeria', component: CarrozzeriaComponent},
   {path: 'bonifiche', component: BonificheComponent},
   {path: 'deposito', component: DepositoComponent},

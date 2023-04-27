@@ -36,10 +36,6 @@
   padding: 0 2px;
 }
 
-.show {
-  display: block;
-}
-
 .tenda {
   position: absolute;
   z-index: 1;
