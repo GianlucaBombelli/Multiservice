@@ -12,14 +12,13 @@ import { OfficinaComponent } from './servizi/officina/officina.component';
 import { VenditaComponent } from './servizi/vendita/vendita.component';
 import { VenditaAutoComponent } from './servizi/vendita-auto/vendita-auto.component';
 import { TendinaComponent } from './servizi/tendina/tendina.component';
+import { ProdSearchPageComponent } from './prod-search-page/prod-search-page.component';
 
 const routes: Routes = [
   {path: '', component : HomepageComponent},
   {path: 'home', component : HomepageComponent},
   {path: 'story', component : StoryComponent, },
-  {path: 'servizi', component: DemolizioniComponent, children: [
-    {path: ':id', component : StoryComponent}
-  ]},
+  {path: 'demolizioni', component: DemolizioniComponent},
   {path: 'carrozzeria', component: CarrozzeriaComponent},
   {path: 'bonifiche', component: BonificheComponent},
   {path: 'deposito', component: DepositoComponent},
@@ -28,6 +27,8 @@ const routes: Routes = [
   {path: 'ricambi', component: VenditaComponent},
   {path: 'vendita', component: VenditaAutoComponent},
   {path: 'tendina', component: TendinaComponent},
+  {path: 'searchpage', component: ProdSearchPageComponent, children : [
+    {path: ':id', component : ProdSearchPageComponent}]}
 ];
 
 @NgModule({

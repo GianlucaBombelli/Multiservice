@@ -3,13 +3,13 @@
     <a routerLink="/story">CHI SIAMO</a>
   </li>
   <li class="link">
-    <button class="service" onclick="myFunction()">
-      <a routerLink="/demolizioni">SERVIZI</a>
-      <app-tendina class="tenda" id="tenda"></app-tendina>
+    <button class="service" (click)="showList = true">
+      <a>SERVIZI</a>
+      <app-tendina class="tenda" *ngIf="showList"></app-tendina>
       <i class="fa-solid fa-chevron-right"></i>
     </button>
   </li>
-  <img src="assets/logo.svg" alt="logo not load">
+  <a routerLink=""><img src="assets/logo.svg" alt="logo not load"></a>
   <li class="link">
     <a routerLink="/carrozzeria"> CONTATTI ED ASSISTENZA </a>
   </li>

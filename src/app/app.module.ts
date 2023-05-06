@@ -19,6 +19,7 @@ import { VenditaAutoComponent } from './servizi/vendita-auto/vendita-auto.compon
 import { GommistaComponent } from './servizi/gommista/gommista.component';
 import { VenditaComponent } from './servizi/vendita/vendita.component';
 import { TendinaComponent } from './servizi/tendina/tendina.component';
+import { ProdSearchPageComponent } from './prod-search-page/prod-search-page.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +38,13 @@ import { TendinaComponent } from './servizi/tendina/tendina.component';
     VenditaAutoComponent,
     GommistaComponent,
     VenditaComponent,
-    TendinaComponent
+    TendinaComponent,
+    ProdSearchPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,11 +11,15 @@
   user-select: none;
 }
 
-.header > img {
+.header > a {
   height: 8vw;
   position:relative;
   left: 50%;
   transform: translate(-50%);
+}
+
+.header > a > img {
+  height: 8vw;
 }
 
 .link {
@@ -30,7 +34,7 @@
   color: #ececec;
 }
 
-.service:hover > i {
+.link > .service:hover > i {
   rotate: 90deg;
   color: #b8e80c;
   padding: 0 2px;
@@ -41,7 +45,7 @@
   z-index: 1;
   transform: translateX(-50%) translateY(10%);
   visibility: hidden;
-  animation-duration: 1s;
+  transition: 0.5s ease-in;
 }
 
 button:focus > .tenda {
@@ -97,13 +101,19 @@ a:hover {
 
 @keyframes bounce {
   0% {
-    opacity: 0;
+    opacity: 1;
     transform: scale(.3);
+    z-index: 1;
   }
   50% {
     opacity: 1;
     transform: scale(1.05);
+    z-index: 1;
   }
-  70% { transform: scale(.9); }
-  100% { transform: scale(1); }
+  70% {
+    transform: scale(.9);
+    z-index: 1; }
+  100% {
+    transform: scale(1);
+    z-index: 1; }
 }

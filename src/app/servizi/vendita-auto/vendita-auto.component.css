@@ -40,7 +40,7 @@
 
 .testo > h1 {
   font-size: 104px;
-  transform: translateY(-50%);
+  transform: translateY(-25%);
   font-family: 'BoldFont';
 }
 

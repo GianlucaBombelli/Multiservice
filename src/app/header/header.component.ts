@@ -9,6 +9,7 @@ import { ServiziService } from '../data-service/servizi.service';
 export class HeaderComponent implements OnInit {
   links: any
   link: any
+  showList = false;
 
   constructor(private linkService: ServiziService) { }
 

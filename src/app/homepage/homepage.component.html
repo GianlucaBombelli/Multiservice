@@ -17,47 +17,148 @@
   </section>
 
   <div class="ricerca">
-    <div class="div1">NUOVO</div>
-    <div class="div2">USATO</div>
-    <div class="div3"><h2>TARGHE DISPONIBILI</h2></div>
+    <div class="div1" [(ngModel)]="condizioni" [class.new]="changecolor" (click)="changecolor = false">NUOVO</div>
+    <div class="div2" [(ngModel)]="condizioni" [class.use]="changecolor" (click)="changecolor = true">USATO</div>
+    <div class="div3">
+      <h2>TARGHE DISPONIBILI</h2>
+      <form class="plate" name="plate" (submit)="onSubmitPlate()">
+        <input class="ricercatarga" maxlength="7" autocomplete="off" name="targa" placeholder="inserisci qui la targa..." [(ngModel)]="targa">
+        <br>
+        <button class="cercatarga">cerca</button>
+      </form>
+    </div>
     <div class="div4">
+      <form (submit)="onSubmit()">
       <div id="borderleft"></div>
       <h2 id="center">RICERCA TRAMITE MODELLO AUTO</h2>
       <div class="modelloauto">
-        <input class="auto" list="marca" placeholder="marca...">
-        <datalist id="marca">
-          <option value="AUDI">
-          <option value="ALFA ROMEO">
-          <option value="LAMBORGHINI">
-          <option value="RENAULT">
-          <option value="TOYOTA">
+        <input class="auto" autocomplete="off" list="marca" id="brand" name="marca" placeholder="marca..." [(ngModel)]="marca">
+          <datalist id="marca">
+            <option value="AIXAM">
+            <option value="ALFA ROMEO">
+            <option value="APRILIA">
+            <option value="ASTON MARTIN">
+            <option value="AUDI">
+            <option value="BETA">
+            <option value="BMW">
+            <option value="CAMB">
+            <option value="CHEVROLET">
+            <option value="CHRYSLER">
+            <option value="CITROEN">
+            <option value="COARVA">
+            <option value="DACIA">
+            <option value="DAEWOO">
+            <option value="DAIHATSU">
+            <option value="DERBI">
+            <option value="DODGE">
+            <option value="DR">
+            <option value="DUCATI">
+            <option value="FIAT">
+            <option value="FORD">
+            <option value="GASOLONE">
+            <option value="GRECAV">
+            <option value="HONDA">
+            <option value="HUPPER">
+            <option value="HUSQVARNA">
+            <option value="HYUNDAI">
+            <option value="INFINITI">
+            <option value="ISUZU">
+            <option value="IVECO">
+            <option value="JAGUAR">
+            <option value="JEEP">
+            <option value="JINAN">
+            <option value="KAWASAKI">
+            <option value="KEEWAY">
+            <option value="KIA">
+            <option value="KYMCO">
+            <option value="LADA">
+            <option value="LAMBERET">
+            <option value="LAMBRETTA">
+            <option value="LANCIA">
+            <option value="LAND ROVER">
+            <option value="LEXUS">
+            <option value="LIGIER">
+            <option value="MALAGUTI">
+            <option value="MASERATI">
+            <option value="MAZDA">
+            <option value="MERCEDES">
+            <option value="MG">
+            <option value="MICROCAR">
+            <option value="MINI">
+            <option value="MINONZION">
+            <option value="MITSUBISHI">
+            <option value="MOTO GUZZI">
+            <option value="NISSAN">
+            <option value="OMV">
+            <option value="OPEL">
+            <option value="PEUGEOT">
+            <option value="PIAGGIO">
+            <option value="PORSCHE">
+            <option value="RENAULT">
+            <option value="ROULOTTE">
+            <option value="ROVER">
+            <option value="SAAB">
+            <option value="SANYANG">
+            <option value="SEAT">
+            <option value="SKODA">
+            <option value="SMART">
+            <option value="SSANGYONG">
+            <option value="SUBARU">
+            <option value="SULKY">
+            <option value="SUZUKI">
+            <option value="TAIZHOU">
+            <option value="TATA">
+            <option value="TIANMA">
+            <option value="TOWN LIFE">
+            <option value="TOYOTA">
+            <option value="UAZ">
+            <option value="VELOCIPEDE">
+            <option value="VESPA">
+            <option value="VOLKSWAGEN">
+            <option value="VOLVO">
+            <option value="XIAMEN XIASHING">
+            <option value="YAMAHA">
+            <option value="ZONTES">
+          </datalist>
+          <input class="auto" autocomplete="off" list="modello" id="models" name="modello" placeholder="modello..." [(ngModel)]="modello">
+          <datalist id="modello">
+              <option *ngFor="let model of getFilteredModels()" [value]="model.modello">
+          </datalist>
+        <input class="auto" autocomplete="off" list="versione" name="versione" placeholder="versione..." [(ngModel)]="versione">
+        <datalist id="versione">
+          <option *ngFor="let model of getFilteredVersion()" [value]="model.versione">
         </datalist>
-        <input class="auto" placeholder="modello...">
-        <input class="auto" placeholder="versione...">
       </div>
       <div class="bottoni">
-        <button class="cerca">cerca</button>
+        <button class="cerca" type="submit">cerca
+          </button>
         <button class="reset">reset</button>
       </div>
+      </form>
     </div>
     <div class="div5">
       <h2>RICERCA TRAMITE CODICE MOTORE</h2>
-      <input type="search" class="motore" placeholder="Inserisci qui il codice motore...">
+      <form class="motor" (submit)="onSubmitMotor()">
+        <input type="search" name="motore" class="motore" placeholder="Inserisci qui il codice motore..." [(ngModel)]="motore">
+        <button class="cercamotore" type="submit">cerca</button>
+      </form>
     </div>
   </div>
   <div class="where"><h1>DOVE TROVARCI?</h1></div>
   <div class="mappa">
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.8361690957927!2d8.64925062439446!3d45.453195082633265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478659a2d21e106d%3A0x5390f0a749de7cda!2sViale%20Gherzi%2C%207%2C%2028100%20Novara%20NO!5e0!3m2!1sit!2sit!4v1682597811061!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11159.784995336797!2d8.5069846!3d45.6318161!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47866970c199b209%3A0xd468163e559a6a8f!2sAUTODEMOLIZIONI%20MULTISERVICE%20S.R.L.!5e0!3m2!1sit!2snl!4v1681807197608!5m2!1sit!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map" [class.iframe2-visible]="showIframe2">
+      <iframe class="iframe1" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11159.784995336797!2d8.5069846!3d45.6318161!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47866970c199b209%3A0xd468163e559a6a8f!2sAUTODEMOLIZIONI%20MULTISERVICE%20S.R.L.!5e0!3m2!1sit!2snl!4v1681807197608!5m2!1sit!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe class="iframe2" *ngIf="showIframe2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.8361690957927!2d8.64925062439446!3d45.453195082633265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478659a2d21e106d%3A0x5390f0a749de7cda!2sViale%20Gherzi%2C%207%2C%2028100%20Novara%20NO!5e0!3m2!1sit!2sit!4v1682597811061!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="Cressa">
-      <h2>Cressa</h2>
+      <button class="btn-cressa" [class.white]="showIframe2" (click)="showIframe2 = false">CRESSA</button>
     </div>
     <div class="Novara">
-      <h2>Novara</h2>
+      <button class="btn-novara" [class.green]="showIframe2" (click)="showIframe2 = true">NOVARA</button>
     </div>
 
   </div>
   <app-footer></app-footer>
   </body>
+
+
