@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { VeicoliserviceService } from '../service/veicoliservice.service';
 
 @Component({
   selector: 'app-prod-search-page',
@@ -7,17 +8,10 @@ import { Component } from '@angular/core';
 })
 export class ProdSearchPageComponent {
 
-  id: any;
-  condizioni: any;
-  marca: any;
-  modello: any;
-  versione: any;
+  autoModels: any;
 
-  constructor () {
-    console.log('Condizioni:', this.condizioni,);
-    console.log('Marca:', this.marca,);
-    console.log('Modello:', this.modello,);
-    console.log('Versione:', this.versione,);
+  constructor (private VeicoliserviceService: VeicoliserviceService) {}
+  ngOnInit() {
+      this.autoModels = this.VeicoliserviceService.getAutovetture()
   }
-
 }
