@@ -20,6 +20,7 @@ import { GommistaComponent } from './servizi/gommista/gommista.component';
 import { VenditaComponent } from './servizi/vendita/vendita.component';
 import { TendinaComponent } from './servizi/tendina/tendina.component';
 import { ProdSearchPageComponent } from './prod-search-page/prod-search-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ProdSearchPageComponent } from './prod-search-page/prod-search-page.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

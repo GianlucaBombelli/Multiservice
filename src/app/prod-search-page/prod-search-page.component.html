@@ -1,4 +1,170 @@
 <app-header></app-header>
-<div class="up">sopra</div>
-<div class="left">sinistra</div>
-<div class="catalogo">catalogo</div>
+<div class="up">
+  <div class="history">
+    <p class="cronologia">{{marca}} - {{modello}} - {{versione}}</p>
+  </div>
+  <div class="titlesearch">
+    <h1 class="title">{{titolo}}</h1>
+  </div>
+</div>
+<div class="position">
+  <div class="left">
+    <h3>Ricerca per categoria</h3>
+    <button class="categories" [ngClass]="{'activecategories': allestimentiesterni === 'true'}" (click)="filterByCategory('true')">Allestimenti esterni</button>
+    <button class="categories">Assale</button>
+    <button class="categories">Cambio e trasmissione</button>
+    <button class="categories">Cristali</button>
+    <button class="categories">Fanaleria</button>
+    <button class="categories">Impianto elettrico</button>
+    <button class="categories">Impianto frenante</button>
+    <button class="categories">Lamierati esterni</button>
+    <button class="categories">Lamierati interni</button>
+    <button class="categories">Motore</button>
+    <button class="categories">Scarico ed iniezione</button>
+    <button class="categories">Selleria</button>
+    <button class="categories">Sicurezza</button>
+    <button class="categories">Sterzo</button>
+    <button class="categories">Termico</button>
+    <h4>Tipo Carburante</h4>
+    <button class="categories">Benzina</button>
+    <button class="categories">Gasolio</button>
+    <button class="categories">GPL</button>
+    <button class="categories">Metano</button>
+    <button class="categories">Elettrico</button>
+    <button class="categories">Benzina/GPL</button>
+    <button class="categories">Gasolio/GPL</button>
+    <button class="categories">Benzina/Elettrico</button>
+    <button class="categories">Gasolio/Elettrico</button>
+    <h4>Tipo Cambio</h4>
+    <button class="categories">Manuale</button>
+    <button class="categories">Automatico</button>
+    <h4>Posizione di guida</h4>
+    <button class="categories">Sinistra</button>
+    <button class="categories">Destra</button>
+
+
+
+  </div>
+  <div class="catalogo">
+    <form class="searchform" (submit)="onSubmit()">
+      <div class="modelloauto">
+        <input class="auto" autocomplete="off" list="marca" id="brand" name="marca" placeholder="marca..." [(ngModel)]="marca" >
+          <datalist id="marca">
+            <option value="AIXAM">
+            <option value="ALFA ROMEO">
+            <option value="APRILIA">
+            <option value="ASTON MARTIN">
+            <option value="AUDI">
+            <option value="BETA">
+            <option value="BMW">
+            <option value="CAMB">
+            <option value="CHEVROLET">
+            <option value="CHRYSLER">
+            <option value="CITROEN">
+            <option value="COARVA">
+            <option value="DACIA">
+            <option value="DAEWOO">
+            <option value="DAIHATSU">
+            <option value="DERBI">
+            <option value="DODGE">
+            <option value="DR">
+            <option value="DUCATI">
+            <option value="FIAT">
+            <option value="FORD">
+            <option value="GASOLONE">
+            <option value="GRECAV">
+            <option value="HONDA">
+            <option value="HUPPER">
+            <option value="HUSQVARNA">
+            <option value="HYUNDAI">
+            <option value="INFINITI">
+            <option value="ISUZU">
+            <option value="IVECO">
+            <option value="JAGUAR">
+            <option value="JEEP">
+            <option value="JINAN">
+            <option value="KAWASAKI">
+            <option value="KEEWAY">
+            <option value="KIA">
+            <option value="KYMCO">
+            <option value="LADA">
+            <option value="LAMBERET">
+            <option value="LAMBRETTA">
+            <option value="LANCIA">
+            <option value="LAND ROVER">
+            <option value="LEXUS">
+            <option value="LIGIER">
+            <option value="MALAGUTI">
+            <option value="MASERATI">
+            <option value="MAZDA">
+            <option value="MERCEDES">
+            <option value="MG">
+            <option value="MICROCAR">
+            <option value="MINI">
+            <option value="MINONZION">
+            <option value="MITSUBISHI">
+            <option value="MOTO GUZZI">
+            <option value="NISSAN">
+            <option value="OMV">
+            <option value="OPEL">
+            <option value="PEUGEOT">
+            <option value="PIAGGIO">
+            <option value="PORSCHE">
+            <option value="RENAULT">
+            <option value="ROULOTTE">
+            <option value="ROVER">
+            <option value="SAAB">
+            <option value="SANYANG">
+            <option value="SEAT">
+            <option value="SKODA">
+            <option value="SMART">
+            <option value="SSANGYONG">
+            <option value="SUBARU">
+            <option value="SULKY">
+            <option value="SUZUKI">
+            <option value="TAIZHOU">
+            <option value="TATA">
+            <option value="TIANMA">
+            <option value="TOWN LIFE">
+            <option value="TOYOTA">
+            <option value="UAZ">
+            <option value="VELOCIPEDE">
+            <option value="VESPA">
+            <option value="VOLKSWAGEN">
+            <option value="VOLVO">
+            <option value="XIAMEN XIASHING">
+            <option value="YAMAHA">
+            <option value="ZONTES">
+          </datalist>
+          <input class="auto" autocomplete="off" list="modello" id="models" name="modello" placeholder="modello..." [(ngModel)]="modello">
+          <datalist id="modello">
+              <option *ngFor="let model of getFilteredModels()" [value]="model.modello">
+          </datalist>
+        <input class="auto" autocomplete="off" list="versione" name="versione" placeholder="versione..." [(ngModel)]="versione">
+        <datalist id="versione">
+          <option *ngFor="let model of getFilteredVersion()" [value]="model.versione">
+        </datalist>
+      </div>
+      <div class="bottoni">
+        <button class="cerca" type="submit">cerca</button>
+      </div>
+      <div class="resultsinfo">
+        <p>N° risultati: {{ numeroRisultati }}</p>
+        <p>Range prezzo: {{prezzoMinimo !== 0 ? prezzoMinimo + '€' : '0€'}} - {{ prezzoMassimo !== 0 ? prezzoMassimo + '€' : '0€'}}</p>
+      </div>
+      </form>
+    <div class="cardauto" *ngFor="let risultato of risultatiFiltrati">
+      <img src="assets/prova.jpg" alt="" class="immagine">
+      <div class="textcontainer">
+        <h2 class="prodtitle">{{risultato.marca}}</h2>
+        <p class="description">{{risultato.modello}}</p>
+      </div>
+      <div class="information">
+        <div><p class="price">{{ risultato.price ? risultato.price + '€' : 'Contattaci' }}</p></div>
+        <div class="border"><p>chiedere per disponibilità</p></div>
+        <div><p>Aggiungi al carrello</p></div>
+      </div>
+    </div>
+
+  </div>
+</div>

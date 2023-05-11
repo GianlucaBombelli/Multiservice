@@ -7,8 +7,8 @@ export class VeicoliserviceService {
 
   autoModels = [
     { marca: "AIXAM", modello: "400", versione: "Versione 1" },
-    { marca: "ALFA ROMEO", modello: "75 (1985)", versione: "Versione 2" },
-    { marca: "ALFA ROMEO", modello: "145 (1995)", versione: "Versione 3" },
+    { marca: "ALFA ROMEO", modello: "75 (1985)", versione: "Versione 2", allestimentiesterni: "true", price: 10 },
+    { marca: "ALFA ROMEO", modello: "145 (1995)", versione: "Versione 3", allestimentiesterni: "true", price: 500 },
     { marca: "ALFA ROMEO", modello: "146 (1995)", versione: "Versione 3" },
     { marca: "ALFA ROMEO", modello: "147 «I» (2001)", versione: "Versione 3" },
     { marca: "ALFA ROMEO", modello: "147 «II» (2005)", versione: "Versione 3" },
@@ -24,7 +24,7 @@ export class VeicoliserviceService {
     { marca: "ALFA ROMEO", modello: "166 «I» (1999)", versione: "Versione 3" },
     { marca: "ALFA ROMEO", modello: "166 «II» (2003)", versione: "Versione 3" },
     { marca: "ALFA ROMEO", modello: "33 (1991)", versione: "Versione 3" },
-    { marca: "ALFA ROMEO", modello: "33 SPORTWAGON (1991)", versione: "Versione 3" },
+    { marca: "ALFA ROMEO", modello: "33 SPORTWAGON (1991)", versione: "Versione 3", allestimentiesterni: "true", price: 19 },
     { marca: "ALFA ROMEO", modello: "4C (2013)", versione: "Versione 3" },
     { marca: "ALFA ROMEO", modello: "4C SPIDER (2013)", versione: "Versione 3" },
     { marca: "ALFA ROMEO", modello: "BRERA (2006)", versione: "Versione 3" },
@@ -152,7 +152,7 @@ export class VeicoliserviceService {
     { marca: "AUDI", modello: "A6 «4B» (2001)", versione: "Versione 5" },
     { marca: "AUDI", modello: "A6 «4B» AVANT (1997)", versione: "Versione 5" },
     { marca: "AUDI", modello: "A6 «4B» AVANT (2001)", versione: "Versione 5" },
-    { marca: "AUDI", modello: "A6 «4BH» ALLROAD (2000)", versione: "Versione 5" },
+    { marca: "AUDI", modello: "A6 «4BH» ALLROAD (2000)", versione: "Versione 5", allestimentiesterni: "true", price: 350 },
     { marca: "AUDI", modello: "A6 «4F2» (2005)", versione: "Versione 5" },
     { marca: "AUDI", modello: "A6 «4F2» (2008)", versione: "Versione 5" },
     { marca: "AUDI", modello: "A6 «4F5» AVANT (2005)", versione: "Versione 5" },
