@@ -1,0 +1,160 @@
+.prodshare{
+  border-radius: 1vw;
+  overflow: hidden;
+}
+
+.prodcontainer {
+  width: 70vw;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1.5fr 2fr;
+  margin: auto;
+  position: relative;
+  margin-top: 20px;
+}
+
+.prodleft {
+  width: 100%;
+}
+
+.prodright {
+  padding: 20px;
+  width: 100%;
+}
+
+.bigimg {
+  width: 100%;
+  border-radius: 1vw;
+}
+
+.bigimg > img {
+  width: 100%;
+}
+
+.prodimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.smallimg {
+  width: 5vw;
+  display: grid;
+  margin-bottom: 20px;
+  transform: translate(-125%, 125%);
+  border-radius: 1vw;
+}
+
+.prodhelp {
+  border: 1px solid #808080;
+  border-radius: 1vw;
+  padding: 15px;
+  width: 82%;
+  margin: auto;
+  text-align: justify;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.sezionehelp {
+  cursor: pointer;
+  user-select: none;
+  margin-top: 10px;
+  height: fit-content;
+  transition: height 1s linear;
+}
+.sezionehelp:first-child {
+  margin-top: 0;
+}
+.sezionehelp > h3 {
+  border-bottom: 1px solid #595959;
+}
+.slide-down {
+  height: fit-content;
+  overflow: hidden;
+
+}
+
+.prodshare {
+  float: right;
+}
+
+.prodadvise {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #808080;
+  border-radius: 1vw;
+  padding: 15px;
+}
+
+.mediumimg {
+  width: 8vw;
+  margin: 1vw;
+  border-radius: 1vw;
+}
+
+.prodfirst {
+  font-size: 24px;
+}
+
+.prodfirst > h2 {
+  margin-top: 10px;
+}
+
+.addandpay {
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+  border: none;
+  color: #b8e80c;
+  background: #595959;
+  padding: 5px;
+  border-radius: 1vw;
+  transform: translateY(4px);
+  font-family: 'BoldFont';
+}
+
+.prodimportant {
+  margin-top: 20px;
+  border: 1px solid #808080;
+  border-radius: 1vw;
+  padding: 15px;
+  position: relative;
+}
+
+.prodimportant > p {
+  display: flex;
+  grid-template-columns: auto;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+.prodimportant > p > b {
+  width: 30%;
+}
+
+.prodspecific {
+  border: 1px solid #808080;
+  border-radius: 1vw;
+  padding: 15px;
+  position: relative;
+}
+
+.prodspecific > p {
+  display: flex;
+  grid-template-columns: auto;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+.prodspecific > p > b {
+  width: 30%;
+}
+
+
+.prodinfo {
+  margin-top: 20px;
+}
+
+.proddisponibilità {
+  float: right;
+}

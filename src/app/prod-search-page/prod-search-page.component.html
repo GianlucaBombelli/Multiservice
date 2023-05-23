@@ -1,4 +1,5 @@
 <app-header></app-header>
+<div class="page">
 <div class="up">
   <div class="history">
     <p class="cronologia">{{marca}} - {{modello}} - {{versione}}</p>
@@ -10,21 +11,21 @@
 <div class="position">
   <div class="left">
     <h3>Ricerca per categoria</h3>
-    <button class="categories" [ngClass]="{'activecategories': allestimentiesterni === 'true'}" (click)="filterByCategory('true')">Allestimenti esterni</button>
-    <button class="categories">Assale</button>
-    <button class="categories">Cambio e trasmissione</button>
-    <button class="categories">Cristali</button>
-    <button class="categories">Fanaleria</button>
-    <button class="categories">Impianto elettrico</button>
-    <button class="categories">Impianto frenante</button>
-    <button class="categories">Lamierati esterni</button>
-    <button class="categories">Lamierati interni</button>
-    <button class="categories">Motore</button>
-    <button class="categories">Scarico ed iniezione</button>
-    <button class="categories">Selleria</button>
-    <button class="categories">Sicurezza</button>
-    <button class="categories">Sterzo</button>
-    <button class="categories">Termico</button>
+    <button class="categories" [ngClass]="{'activecategories': allestimentiesterni === 'true'}" (click)="filterByCategory('allestimentiesterni')">Allestimenti esterni</button>
+    <button class="categories" [ngClass]="{'activecategories': assale === 'true'}" (click)="filterByCategory('assale')">Assale</button>
+    <button class="categories" [ngClass]="{'activecategories': trasmissione === 'true'}" (click)="filterByCategory('trasmissione')">Cambio e trasmissione</button>
+    <button class="categories" [ngClass]="{'activecategories': cristalli === 'true'}" (click)="filterByCategory('cristalli')">Cristali</button>
+    <button class="categories" [ngClass]="{'activecategories': fanaleria === 'true'}" (click)="filterByCategory('fanaleria')">Fanaleria</button>
+    <button class="categories" [ngClass]="{'activecategories': impelettrico === 'true'}" (click)="filterByCategory('impelettrico')">Impianto elettrico</button>
+    <button class="categories" [ngClass]="{'activecategories': impfrenante === 'true'}" (click)="filterByCategory('impfrenante')">Impianto frenante</button>
+    <button class="categories" [ngClass]="{'activecategories': lamieratiesterni === 'true'}" (click)="filterByCategory('lamieratiesterni')">Lamierati esterni</button>
+    <button class="categories" [ngClass]="{'activecategories': lamieratiinterni === 'true'}" (click)="filterByCategory('lamieratiinterni')">Lamierati interni</button>
+    <button class="categories" [ngClass]="{'activecategories': partimotore === 'true'}" (click)="filterByCategory('partimotore')">Motore</button>
+    <button class="categories" [ngClass]="{'activecategories': scarico === 'true'}" (click)="filterByCategory('scarico')">Scarico ed iniezione</button>
+    <button class="categories" [ngClass]="{'activecategories': selleria === 'true'}" (click)="filterByCategory('selleria')">Selleria</button>
+    <button class="categories" [ngClass]="{'activecategories': sicurezza === 'true'}" (click)="filterByCategory('sicurezza')">Sicurezza</button>
+    <button class="categories" [ngClass]="{'activecategories': sterzo === 'true'}" (click)="filterByCategory('sterzo')">Sterzo</button>
+    <button class="categories" [ngClass]="{'activecategories': termico === 'true'}" (click)="filterByCategory('termico')">Termico</button>
     <h4>Tipo Carburante</h4>
     <button class="categories">Benzina</button>
     <button class="categories">Gasolio</button>
@@ -153,18 +154,26 @@
         <p>Range prezzo: {{prezzoMinimo !== 0 ? prezzoMinimo + '€' : '0€'}} - {{ prezzoMassimo !== 0 ? prezzoMassimo + '€' : '0€'}}</p>
       </div>
       </form>
-    <div class="cardauto" *ngFor="let risultato of risultatiFiltrati">
-      <img src="assets/prova.jpg" alt="" class="immagine">
-      <div class="textcontainer">
-        <h2 class="prodtitle">{{risultato.marca}}</h2>
-        <p class="description">{{risultato.modello}}</p>
-      </div>
-      <div class="information">
-        <div><p class="price">{{ risultato.price ? risultato.price + '€' : 'Contattaci' }}</p></div>
-        <div class="border"><p>chiedere per disponibilità</p></div>
-        <div><p>Aggiungi al carrello</p></div>
-      </div>
-    </div>
+    <div class="cardauto" *ngFor="let risultato of risultatiFiltrati, index as i">
+      <a routerLink="/searchpage/{{i}}">
+        <img src="assets/prova.jpg" alt="" class="immagine">
+      </a>
+        <a routerLink="/searchpage/{{i}}">
+        <div class="textcontainer">
+          <h2 class="prodtitle">{{risultato.marca}}</h2>
+          <p class="description">{{risultato.modello}}</p>
+        </div></a>
+        <div class="information">
+          <div><p class="price">{{ risultato.price ? risultato.price + '€' : 'Contattaci' }}</p></div>
+          <div class="border"><p>chiedere per disponibilità</p></div>
+          <div><p>Aggiungi al carrello</p></div>
+        </div>
 
+    </div>
   </div>
 </div>
+</div>
+<ng-template #ProdPage>
+
+</ng-template>
+<app-footer></app-footer>

@@ -1,0 +1,63 @@
+
+<app-header></app-header>
+<div class="prodcontainer">
+  <div class="prodleft">
+    <img class="bigimg" src="assets/prova.jpg" alt="img not load">
+    <div class="prodimg">
+      <img src="assets/prova.jpg" alt="img not load" class="smallimg">
+      <img src="assets/prova.jpg" alt="img not load" class="smallimg">
+      <img src="assets/prova.jpg" alt="img not load" class="smallimg">
+    </div>
+    <div class="prodhelp">
+      <div class="sezionehelp">
+        <h3 (click)="toggleSpedizione()" [@slideUpDown]>come funziona la spedizione?<i class="fa-solid fa-chevron-down"></i></h3>
+        <p class="slide-down" [@slideUpDown] *ngIf="mostraSpedizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo placeat veritatis voluptatum odio minima maiores ducimus provident sunt. Recusandae veniam nostrum amet assumenda, aut alias sequi illo non praesentium nesciunt.</p>
+      </div>
+      <div class="sezionehelp">
+        <h3 (click)="toggleAcquisto()">come acquisto?<i class="fa-solid fa-chevron-down"></i></h3>
+        <p class="slide-down" [@slideUpDown] *ngIf="mostraAcquisto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero quidem alias laboriosam accusantium dolorem dignissimos. Libero necessitatibus sunt quia, minima, voluptatem autem veniam esse dolores, natus soluta laborum dicta.</p>
+      </div>
+      <div class="sezionehelp">
+        <h3 (click)="toggleMoreInfo()">maggiori info<i class="fa-solid fa-chevron-down"></i></h3>
+        <p class="slide-down" [@slideUpDown] *ngIf="mostraMoreInfo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore id sit doloribus iusto nostrum distinctio ducimus! Adipisci minima eveniet beatae a numquam excepturi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis accusantium, rem cupiditate totam suscipit fugiat voluptate velit repellat necessitatibus doloremque neque voluptates expedita quam animi. Qui totam provident doloremque labore! repudiandae harum quos officia nulla, quam quis.</p>
+      </div>
+    </div>
+  </div>
+  <div class="prodright">
+    <div class="prodfirst">
+      <h1>TITOLO <img class="prodshare" src="assets/simbols/share-button.svg" alt="button not load"></h1>
+      <h2>colori disponibili <p class="proddisponibilità">disponibilità</p></h2>
+      <h2>3000€ <button class="addandpay">aggiungi al carrello</button></h2>
+    </div>
+    <div class="prodimportant">
+      <h3>Informazioni del ricambio</h3>
+      <p><b>Qualità:</b>Loa sunt deleniti!</p>
+      <p><b>Codice:</b>altre note importanti non u che cosa</p>
+      <p><b>Note importanti:</b>altre note imtamente su che cosa</p>
+    </div>
+    <div class="prodinfo">
+      <div class="prodspecific">
+        <h3>Specifiche auto d'origine</h3>
+        <p><b>Marca:</b>testo alcune specifiche</p>
+        <p><b>Modello:</b>testo alcune specifiche</p>
+        <p><b>Versione:</b>testo alcune specifiche</p>
+        <p><b>Codice motore:</b>testo alcune specifiche</p>
+        <p><b>Anno:</b>testo alcune specifiche</p>
+        <p><b>Posizione volante:</b>testo alcune specifiche</p>
+        <p><b>Tipo carburante:</b>testo alcune specifiche</p>
+        <p><b>Cilindrata:</b>testo alcune specifiche</p>
+        <p><b>KW:</b>testo alcune specifiche</p>
+        <p><b>Tipo di cambio:</b>testo alcune specifiche</p>
+        <p><b>Ruote motrici:</b>testo alcune specifiche</p>
+      </div>
+      <div class="prodadvise">
+        <h2>Pezzi Corellati</h2>
+        <img src="assets/prova.jpg" alt="img not load" class="mediumimg">
+        <img src="assets/prova.jpg" alt="img not load" class="mediumimg">
+        <img src="assets/prova.jpg" alt="img not load" class="mediumimg">
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,112 @@
+.cartcontainer {
+  position: relative;
+  width: 60%;
+  margin: auto;
+
+}
+.cartcard {
+  position: relative;
+  width: 100%;
+  color: #595959;
+  overflow: hidden;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  border-bottom: 1px solid #808080;
+}
+
+.cartgeneral {
+  height: 100%;
+  display: block;
+  text-align: left;
+}
+
+.cartgeneral > img {
+  width: 50%;
+  border-radius: 1vw;
+  display: inherit;
+  margin-bottom: 0;
+
+}
+
+.cartspecific {
+  font-size: small;
+}
+
+.carttotal {
+  width: 100%;
+  position: relative;
+  border-radius: 0 0 1vw 1vw;
+  background: #595959;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #ececec;
+}
+
+.checkout {
+  float: right;
+  border: none;
+  background: #b8e80c;
+  border-radius: 1vw;
+  font-size: 18px;
+  padding: 5px;
+  transform: translateY(-50%);
+}
+
+.paymetod {
+  font-size: small;
+  width: max-content;
+  display: inline-flex;
+}
+
+.absolute {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 10px;
+}
+
+.cartinfo > p {
+  font-size: 28px;
+  font-family: 'BoldFont';
+}
+
+.categories {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.cartcontainer > img {
+  width: 25%;
+  text-align: center;
+  transform: translateX(150%);
+}
+
+.cartheader {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  text-align: center;
+  align-items: center;
+  border-bottom: 2px solid #595959;
+  padding: 10px 0;
+}
+
+.cartheader > p:not(.bigger) {
+  font-family: 'BoldFont';
+  color: #595959;
+  font-size: 18px;
+}
+
+.bigger {
+  font-size: x-large;
+}
+
+.piccolo {
+  font-size: 12px;
+}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,8 @@ import { VenditaComponent } from './servizi/vendita/vendita.component';
 import { TendinaComponent } from './servizi/tendina/tendina.component';
 import { ProdSearchPageComponent } from './prod-search-page/prod-search-page.component';
 import { RouterModule } from '@angular/router';
+import { ProdPageComponent } from './prod-page/prod-page.component';
+import { CarrelloProdComponent } from './carrello-prod/carrello-prod.component';
 
 @NgModule({
   declarations: [
@@ -41,9 +44,12 @@ import { RouterModule } from '@angular/router';
     VenditaComponent,
     TendinaComponent,
     ProdSearchPageComponent,
+    ProdPageComponent,
+    CarrelloProdComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     RouterModule,

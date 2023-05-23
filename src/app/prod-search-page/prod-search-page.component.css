@@ -201,7 +201,7 @@ h3::after {
 }
 
 .activecategories {
-  color: #b8e80c;
+  color: #a3ce0b;
 }
 
 li {
@@ -217,5 +217,11 @@ li {
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   gap: 10px;
+  color: #ececec;
+}
+
+.cardauto > a {
+  width: 100%;
+  text-decoration: none;
   color: #ececec;
 }

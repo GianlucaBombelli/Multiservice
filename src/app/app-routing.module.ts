@@ -13,6 +13,8 @@ import { VenditaComponent } from './servizi/vendita/vendita.component';
 import { VenditaAutoComponent } from './servizi/vendita-auto/vendita-auto.component';
 import { TendinaComponent } from './servizi/tendina/tendina.component';
 import { ProdSearchPageComponent } from './prod-search-page/prod-search-page.component';
+import { ProdPageComponent } from './prod-page/prod-page.component';
+import { CarrelloProdComponent } from './carrello-prod/carrello-prod.component';
 
 const routes: Routes = [
   {path: '', component : HomepageComponent},
@@ -28,7 +30,10 @@ const routes: Routes = [
   {path: 'vendita', component: VenditaAutoComponent},
   {path: 'tendina', component: TendinaComponent},
   {path: 'searchpage', component: ProdSearchPageComponent, children : [
-    {path: ':id', component : ProdSearchPageComponent}]}
+    {path: ':id', component : ProdPageComponent}]},
+  {path: 'prova', component: ProdPageComponent},
+  {path: 'carrello', component: CarrelloProdComponent}
+
 ];
 
 @NgModule({
