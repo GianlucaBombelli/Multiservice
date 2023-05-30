@@ -15,6 +15,7 @@ import { TendinaComponent } from './servizi/tendina/tendina.component';
 import { ProdSearchPageComponent } from './prod-search-page/prod-search-page.component';
 import { ProdPageComponent } from './prod-page/prod-page.component';
 import { CarrelloProdComponent } from './carrello-prod/carrello-prod.component';
+import { RegisterformComponent } from './registerform/registerform.component';
 
 const routes: Routes = [
   {path: '', component : HomepageComponent},
@@ -32,7 +33,9 @@ const routes: Routes = [
   {path: 'searchpage', component: ProdSearchPageComponent, children : [
     {path: ':id', component : ProdPageComponent}]},
   {path: 'prova', component: ProdPageComponent},
-  {path: 'carrello', component: CarrelloProdComponent}
+  {path: 'carrello', component: CarrelloProdComponent},
+  {path: 'registration', component: RegisterformComponent},
+
 
 ];
 

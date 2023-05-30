@@ -1,0 +1,107 @@
+<form>
+    <div class="formcontainer">
+        <div class="registration">
+          <img src="assets/logo.svg" alt="">
+          <h2>Registrazione</h2>
+          <div class="choose">
+            <section>
+              <input type="radio" id="privato" name="tipoUtente" value="privato" [(ngModel)]="isAzienda"/>
+              <label for="privato">Privato</label>
+            </section>
+            <section>
+              <input type="radio" id="azienda" name="tipoUtente" value="azienda" [(ngModel)]="isAzienda"/>
+              <label for="azienda">Azienda</label>
+            </section>
+          </div>
+          <section *ngIf="currentSection === 1 && isAzienda === 'azienda'" [@slideInOut]="'enter'">
+            <div class="colonna">
+              <input type="email" name="mail" class="" placeholder="E-mail" [(ngModel)]="email">
+              <input type="password" name="password" class="" placeholder="Password" [(ngModel)]="password">
+              <input type="text" name="fiscale" class="" placeholder="Codice Fiscale" [(ngModel)]="codiceFiscale" pattern="[A-Z]{6}\[0-9]{2}\[A-Z]{1}\[0-9]{2}\[A-Z]{1}\[0-9]{3}\[A-Z]{1}" (input)="verifyCodiceFiscale()">
+              <div *ngIf="isInvalidCodiceFiscale" class="error-message">Il codice fiscale non è valido.</div>
+            </div>
+            <div class="colonna">
+              <input type="text" name="nazione" class="" placeholder="Nazione" [(ngModel)]="nazione">
+              <input type="password" name="verification" class="" placeholder="Conferma Password" [(ngModel)]="confermapass">
+              <input type="text" name="iva" class="" placeholder="P.Iva" [(ngModel)]="partivaIva">
+            </div>
+          </section>
+          <section *ngIf="currentSection === 2 && isAzienda === 'azienda'" class="transition-slide"  [@slideInOut]="'enter'">
+            <section>
+            <input type="text" name="ragioneSociale" class="alone" placeholder="Ragione Sociale" [(ngModel)]="ragioneSociale">
+          </section>
+            <div class="colonna">
+              <input type="text" name="codicesdi" class="" placeholder="Codice SDI" [(ngModel)]="codiceSdi">
+              <input type="text" name="Indirizzo" class="" placeholder="Indirizzo" [(ngModel)]="indirizzo">
+              <input type="text" name="città" class="" placeholder="Città" [(ngModel)]="citta">
+              <input type="text" name="telefono" class="" placeholder="Telefono" [(ngModel)]="telefono">
+            </div>
+            <div class="colonna">
+              <input type="text" name="pec" class="" placeholder="PEC" [(ngModel)]="pec">
+              <input type="text" name="cap" class="" placeholder="CAP" [(ngModel)]="cap">
+              <input type="text" name="provincia" class="" placeholder="Provincia" [(ngModel)]="provincia">
+              <input type="text" name="cellulare" class="" placeholder="Cellulare" [(ngModel)]="cellulare">
+            </div>
+          </section>
+          <section *ngIf="currentSection === 3 && isAzienda === 'azienda'" class="transition-slide"  [@slideInOut]="'enter'">
+            <section>
+            <input type="text" name="spedizioneRagioneSociale" class="alone" placeholder="Ragione Sociale o Cognome e Nome" [(ngModel)]="spedizioneRagioneSociale">
+          </section>
+          <div class="colonna">
+              <input type="text" name="spedizioneIndirizzo" class="" placeholder="Indirizzo" [(ngModel)]="spedizioneIndirizzo">
+              <input type="text" name="spedizioneCittà" class="" placeholder="Città" [(ngModel)]="spedizioneCitta">
+              <input type="text" name="spedizioneCap" class="" placeholder="CAP" [(ngModel)]="spedizioneCap">
+            </div>
+            <div class="colonna">
+              <input type="text" name="spedizioneCellulare" class="" placeholder="Nazione" [(ngModel)]="spedizioneNazione">
+              <input type="text" name="spedizioneProvincia" class="" placeholder="Provincia" [(ngModel)]="spedizioneProvincia">
+              <input type="text" name="spedizioneCellulare" class="" placeholder="Cellulare" [(ngModel)]="spedizioneCellulare">
+          </div>
+          </section>
+          <section *ngIf="currentSection === 1 && isAzienda === 'privato'" [@slideInOut]="'enter'">
+            <div class="colonna">
+              <input type="email" name="mail" class="" placeholder="E-mail" [(ngModel)]="email" email>
+              <input type="password" name="password" class="" placeholder="Password" [(ngModel)]="password">
+            </div>
+            <div class="colonna">
+              <input type="text" name="nazione" class="" placeholder="Nazione" [(ngModel)]="nazione">
+              <input type="password" name="verification" class="" placeholder="Conferma Password" [(ngModel)]="confermapass">
+            </div>
+            <input type="text" name="fiscale" class="alone" placeholder="Codice Fiscale" [(ngModel)]="codiceFiscale">
+          </section>
+          <section *ngIf="currentSection === 2 && isAzienda === 'privato'" class="transition-slide"  [@slideInOut]="'enter'">
+            <section>
+            <input type="text" name="cognomeNome" class="alone" placeholder="Cognome e Nome" [(ngModel)]="cognomeNome">
+            <input type="text" name="indirizzo" class="alone" placeholder="Indirizzo" [(ngModel)]="indirizzo">
+          </section>
+            <div class="colonna">
+              <input type="text" name="città" class="" placeholder="Città" [(ngModel)]="citta">
+              <input type="text" name="cap" class="" placeholder="CAP" [(ngModel)]="cap">
+            </div>
+            <div class="colonna">
+              <input type="text" name="provincia" class="" placeholder="Provincia" [(ngModel)]="provincia">
+              <input type="text" name="cellulare" class="" placeholder="Cellulare" [(ngModel)]="cellulare">
+            </div>
+          </section>
+          <section *ngIf="currentSection === 3 && isAzienda === 'privato'" class="transition-slide"  [@slideInOut]="'enter'">
+            <section>
+            <input type="text" name="spedizioneCognomeNome" class="alone" placeholder="Cognome e Nome" [(ngModel)]="spedizioneCognomeNome">
+          </section>
+          <div class="colonna">
+              <input type="text" name="spedizioneIndirizzo" class="" placeholder="Indirizzo" [(ngModel)]="spedizioneIndirizzo">
+              <input type="text" name="spedizioneCittà" class="" placeholder="Città" [(ngModel)]="spedizioneCitta">
+              <input type="text" name="spedizioneCap" class="" placeholder="CAP" [(ngModel)]="spedizioneCap">
+            </div>
+            <div class="colonna">
+              <input type="text" name="spedizioneCellulare" class="" placeholder="Nazione" [(ngModel)]="spedizioneNazione">
+              <input type="text" name="spedizioneProvincia" class="" placeholder="Provincia" [(ngModel)]="spedizioneProvincia">
+              <input type="text" name="spedizioneCellulare" class="" placeholder="Cellulare" [(ngModel)]="spedizioneCellulare">
+          </div>
+          </section>
+          <p id="check1"><input type="checkbox" name="spedizione" [(ngModel)]="checkboxValue" (change)="onCheckboxChange()"><b>Indirizzo di spedizione differente da quello di fatturazione</b></p>
+          <p id="check2"><input type="checkbox" name="privacy" ><b>Ho letto e acconsento l'<i>Informativa sulla Privacy</i></b></p>
+          <input type="submit" value="Avanti" [value]="currentSection === totalSections ? 'Invia' : 'Avanti'" (click)="currentSection === totalSections ? onInviadati() : nextSection()">
+          <input type="submit" value="Indietro" (click)="previousSection()">
+        </div>
+    </div>
+</form>

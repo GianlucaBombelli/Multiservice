@@ -24,6 +24,7 @@ import { ProdSearchPageComponent } from './prod-search-page/prod-search-page.com
 import { RouterModule } from '@angular/router';
 import { ProdPageComponent } from './prod-page/prod-page.component';
 import { CarrelloProdComponent } from './carrello-prod/carrello-prod.component';
+import { RegisterformComponent } from './registerform/registerform.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CarrelloProdComponent } from './carrello-prod/carrello-prod.component';
     ProdSearchPageComponent,
     ProdPageComponent,
     CarrelloProdComponent,
+    RegisterformComponent,
   ],
   imports: [
     BrowserModule,
