@@ -1,6 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registerform',
@@ -15,6 +15,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
     ])
   ]
 })
+
 export class RegisterformComponent implements OnInit{
 
   registerForm!: FormGroup;
@@ -23,11 +24,13 @@ export class RegisterformComponent implements OnInit{
   constructor () {}
 
   ngOnInit (): void {
+
     this.registerForm = new FormGroup({
       nome: new FormControl('',Validators.required),
       email: new FormControl('',Validators.required),
-      password: new FormControl('',Validators.required),
-      codiceFiscale: new FormControl('',Validators.required),
+      password: new FormControl('',[Validators.required,Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()])[a-zA-Z\\d!@#$%^&*()]+$')]),
+      verPassword: new FormControl ('', [Validators.required]),
+      codiceFiscale: new FormControl('',[Validators.required]),
       nazione: new FormControl('',Validators.required),
       cellulare: new FormControl('',Validators.required),
       indirizzo: new FormControl('',Validators.required),
@@ -66,31 +69,6 @@ export class RegisterformComponent implements OnInit{
       spedizioneCellulare: new FormControl('',Validators.required),
     })
   }
-
-  email: string = '';
-  password: string = '';
-  confermapass: string = '';
-  nazione: string = '';
-  codiceFiscale: string = '';
-  partivaIva: string = '';
-  codiceSdi: string = '';
-  indirizzo: string = '';
-  citta: string = '';
-  cap: string = '';
-  provincia: string = '';
-  pec: string = '';
-  telefono: string = '';
-  cellulare: string = '';
-  ragioneSociale: string = '';
-  cognomeNome: string = '';
-  spedizioneRagioneSociale: string = '';
-  spedizioneCognomeNome: string = '';
-  spedizioneIndirizzo: string = '';
-  spedizioneCitta: string = '';
-  spedizioneCap: string = '';
-  spedizioneNazione: string = '';
-  spedizioneProvincia: string = '';
-  spedizioneCellulare: string = '';
 
   currentSection = 1; // Form iniziale visibile
   totalSections = 2; // Numero totale di sezioni/form

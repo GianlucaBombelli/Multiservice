@@ -1,7 +1,7 @@
 <form >
     <div class="formcontainer">
         <div class="registration">
-          <img src="assets/logo.svg" alt="">
+          <a href="home"><img src="assets/logo.svg" alt=""></a>
           <h2>Registrazione</h2>
           <div class="choose">
             <section>
@@ -17,11 +17,11 @@
             <div class="colonna">
               <input type="email" name="mail" class="" placeholder="E-mail" formControlName="email">
               <input type="password" name="password" class="" placeholder="Password" formControlName="password">
-              <input type="text" name="fiscale" class="" placeholder="Codice Fiscale" formControlName="codiceFiscale" pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$">
+              <input type="text" name="fiscale" class="" placeholder="Codice Fiscale" formControlName="codiceFiscale">
             </div>
             <div class="colonna">
               <input type="text" name="nazione" class="" placeholder="Nazione" formControlName="nazione">
-              <input type="password" name="verification" class="" placeholder="Conferma Password">
+              <input type="password" name="verification" class="" placeholder="Conferma Password" formControlName="verPassword">
               <input type="text" name="iva" class="" placeholder="P.Iva" formControlName="partivaIva">
             </div>
           </section>
@@ -64,9 +64,9 @@
             </div>
             <div class="colonna">
               <input type="text" name="nazione" class="" placeholder="Nazione" formControlName="nazione">
-              <input type="password" name="verification" class="" placeholder="Conferma Password">
+              <input type="password" name="verification" class="" placeholder="Conferma Password" formControlName="verPassword">
             </div>
-            <input type="text" name="fiscale" class="alone" placeholder="Codice Fiscale" formControlName="codiceFiscale" pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$">
+            <input type="text" name="codiceFiscale" class="alone" placeholder="Codice Fiscale" formControlName="codiceFiscale" pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$">
           </section>
           <section *ngIf="currentSection === 2 && isAzienda === 'privato'" class="transition-slide"  [@slideInOut]="'enter'" [formGroup]="registerForm">
             <section>
