@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { VeicoliserviceService } from '../service/veicoliservice.service';
+import { Router } from '@angular/router';
+
 
 interface AutoModel {
   marca: string;
@@ -63,15 +65,27 @@ getFilteredVersion(): AutoModel[] {
 
 
   onSubmit() {
+    let queryParams: { [key: string]: string } = {};
+
     if (this.changecolor) {
-      this.condizioni = 'usato';
+      queryParams = { condizioni: 'usato' };
     } else {
-      this.condizioni = 'nuovo';
+      queryParams = { condizioni: 'nuovo' };
     }
-    console.log('Condizioni:', this.condizioni,);
-    console.log('Marca:', this.marca,);
-    console.log('Modello:', this.modello,);
-    console.log('Versione:', this.versione,);
+
+    if (this.marca) {
+      queryParams['marca'] = this.marca;
+    }
+
+    if (this.modello) {
+      queryParams['modello'] = this.modello;
+    }
+
+    if (this.versione) {
+      queryParams['versione'] = this.versione;
+    }
+
+    this.router.navigate(['/searchpage'], { queryParams: queryParams });
   }
 
   onSubmitMotor() {
@@ -94,7 +108,7 @@ getFilteredVersion(): AutoModel[] {
     console.log('Targa:', this.targa,);
   }
 
-  constructor(private VeicoliserviceService: VeicoliserviceService) { }
+  constructor(private VeicoliserviceService: VeicoliserviceService, private router: Router) { }
 
   ngOnInit() {
     this.slideShow();

@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { passwordNotMatch } from './customvalidation/customvalidator.directive';
 
 @Component({
   selector: 'app-registerform',
@@ -18,56 +19,53 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors,
 
 export class RegisterformComponent implements OnInit{
 
-  registerForm!: FormGroup;
-  registerFormAzienda!: FormGroup;
-
   constructor () {}
 
+  registerForm = new FormGroup({
+    nome: new FormControl('',Validators.required),
+    email: new FormControl('',Validators.required),
+    password: new FormControl('',[Validators.required,Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()])[a-zA-Z\\d!@#$%^&*()]+$')]),
+    verPassword: new FormControl ('', [Validators.required, passwordNotMatch(/vittoria/i)]),
+    codiceFiscale: new FormControl('',[Validators.required]),
+    nazione: new FormControl('',Validators.required),
+    cellulare: new FormControl('',Validators.required),
+    indirizzo: new FormControl('',Validators.required),
+    citta: new FormControl('',Validators.required),
+    cap: new FormControl('',Validators.required),
+    provincia: new FormControl('',Validators.required),
+    spedizioneCognomeNome: new FormControl('',Validators.required),
+    spedizioneIndirizzo: new FormControl('',Validators.required),
+    spedizioneCitta: new FormControl('',Validators.required),
+    spedizioneCap: new FormControl('',Validators.required),
+    spedizioneProvincia: new FormControl('',Validators.required),
+    spedizioneNazione: new FormControl('',Validators.required),
+    spedizioneCellulare: new FormControl('',Validators.required),
+  })
+  registerFormAzienda = new FormGroup ({
+    ragioneSociale: new FormControl('',Validators.required),
+    email: new FormControl('',Validators.required),
+    nazione: new FormControl('',Validators.required),
+    password: new FormControl('',Validators.required),
+    codiceFiscale: new FormControl('',Validators.required),
+    partivaIva: new FormControl('',Validators.required),
+    codiceSdi: new FormControl('',Validators.required),
+    pec: new FormControl('',Validators.required),
+    indirizzo: new FormControl('',Validators.required),
+    citta: new FormControl('',Validators.required),
+    cap: new FormControl('',Validators.required),
+    provincia: new FormControl('',Validators.required),
+    cellulare: new FormControl('',Validators.required),
+    telefono: new FormControl('',Validators.required),
+    spedizioneRagioneSociale: new FormControl('',Validators.required),
+    spedizioneIndirizzo: new FormControl('',Validators.required),
+    spedizioneCitta: new FormControl('',Validators.required),
+    spedizioneCap: new FormControl('',Validators.required),
+    spedizioneProvincia: new FormControl('',Validators.required),
+    spedizioneNazione: new FormControl('',Validators.required),
+    spedizioneCellulare: new FormControl('',Validators.required),
+  })
   ngOnInit (): void {
 
-    this.registerForm = new FormGroup({
-      nome: new FormControl('',Validators.required),
-      email: new FormControl('',Validators.required),
-      password: new FormControl('',[Validators.required,Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()])[a-zA-Z\\d!@#$%^&*()]+$')]),
-      verPassword: new FormControl ('', [Validators.required]),
-      codiceFiscale: new FormControl('',[Validators.required]),
-      nazione: new FormControl('',Validators.required),
-      cellulare: new FormControl('',Validators.required),
-      indirizzo: new FormControl('',Validators.required),
-      citta: new FormControl('',Validators.required),
-      cap: new FormControl('',Validators.required),
-      provincia: new FormControl('',Validators.required),
-      spedizioneCognomeNome: new FormControl('',Validators.required),
-      spedizioneIndirizzo: new FormControl('',Validators.required),
-      spedizioneCitta: new FormControl('',Validators.required),
-      spedizioneCap: new FormControl('',Validators.required),
-      spedizioneProvincia: new FormControl('',Validators.required),
-      spedizioneNazione: new FormControl('',Validators.required),
-      spedizioneCellulare: new FormControl('',Validators.required),
-    }),
-    this.registerFormAzienda = new FormGroup ({
-      ragioneSociale: new FormControl('',Validators.required),
-      email: new FormControl('',Validators.required),
-      nazione: new FormControl('',Validators.required),
-      password: new FormControl('',Validators.required),
-      codiceFiscale: new FormControl('',Validators.required),
-      partivaIva: new FormControl('',Validators.required),
-      codiceSdi: new FormControl('',Validators.required),
-      pec: new FormControl('',Validators.required),
-      indirizzo: new FormControl('',Validators.required),
-      citta: new FormControl('',Validators.required),
-      cap: new FormControl('',Validators.required),
-      provincia: new FormControl('',Validators.required),
-      cellulare: new FormControl('',Validators.required),
-      telefono: new FormControl('',Validators.required),
-      spedizioneRagioneSociale: new FormControl('',Validators.required),
-      spedizioneIndirizzo: new FormControl('',Validators.required),
-      spedizioneCitta: new FormControl('',Validators.required),
-      spedizioneCap: new FormControl('',Validators.required),
-      spedizioneProvincia: new FormControl('',Validators.required),
-      spedizioneNazione: new FormControl('',Validators.required),
-      spedizioneCellulare: new FormControl('',Validators.required),
-    })
   }
 
   currentSection = 1; // Form iniziale visibile

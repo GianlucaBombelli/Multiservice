@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { VeicoliserviceService } from '../service/veicoliservice.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface AutoModel {
   marca: string;
@@ -232,10 +233,20 @@ export class ProdSearchPageComponent {
     this.updateFilteredResults();
   }
 
-  constructor (private VeicoliserviceService: VeicoliserviceService,) {}
+  constructor (private VeicoliserviceService: VeicoliserviceService, private route: ActivatedRoute, private router: Router) {}
   ngOnInit() {
     this.autoModels = this.VeicoliserviceService.getAutovetture();
     this.updateFilteredResults();
+    this.autoModels = this.VeicoliserviceService.getAutovetture();
+    this.route.queryParams.subscribe(params => {
+      this.condizioni = params['condizioni'] || '';
+      this.marca = params['marca'] || '';
+      this.modello = params['modello'] || '';
+      this.versione = params['versione'] || '';
+
+      // Aggiorna i risultati filtrati all'apertura della pagina
+      this.updateFilteredResults();
+    });
   }
 
   updateFilteredResults() {
