@@ -154,11 +154,11 @@
         <p>Range prezzo: {{prezzoMinimo !== 0 ? prezzoMinimo + '€' : '0€'}} - {{ prezzoMassimo !== 0 ? prezzoMassimo + '€' : '0€'}}</p>
       </div>
       </form>
-    <div class="cardauto" *ngFor="let risultato of risultatiFiltrati, index as i">
-      <a routerLink="/searchpage/{{i}}">
+    <div class="cardauto" *ngFor="let risultato of risultatiFiltrati, let i = index">
+      <a routerLink="/product">
         <img src="assets/prova.jpg" alt="" class="immagine">
       </a>
-        <a routerLink="/searchpage/{{i}}">
+        <a routerLink="/product">
         <div class="textcontainer">
           <h2 class="prodtitle">{{risultato.marca}}</h2>
           <p class="description">{{risultato.modello}}</p>
@@ -166,7 +166,7 @@
         <div class="information">
           <div><p class="price">{{ risultato.price ? risultato.price + '€' : 'Contattaci' }}</p></div>
           <div class="border"><p>chiedere per disponibilità</p></div>
-          <div><p>Aggiungi al carrello</p></div>
+          <button (click)="showCodeHTML(i)">Aggiungi al carrello</button>
         </div>
 
     </div>

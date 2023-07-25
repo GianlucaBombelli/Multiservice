@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { VeicoliserviceService } from '../service/veicoliservice.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartserviceService } from '../service/cartservice.service';
 
 interface AutoModel {
+  condizioni: string;
   marca: string;
   modello: string;
   versione: string;
@@ -233,7 +235,7 @@ export class ProdSearchPageComponent {
     this.updateFilteredResults();
   }
 
-  constructor (private VeicoliserviceService: VeicoliserviceService, private route: ActivatedRoute, private router: Router) {}
+  constructor (private VeicoliserviceService: VeicoliserviceService, private route: ActivatedRoute, private router: Router, private cartService:CartserviceService) {}
   ngOnInit() {
     this.autoModels = this.VeicoliserviceService.getAutovetture();
     this.updateFilteredResults();
@@ -250,8 +252,9 @@ export class ProdSearchPageComponent {
   }
 
   updateFilteredResults() {
-    if (this.marca || this.modello || this.versione || this.allestimentiesterni || this.assale || this.trasmissione || this.cristalli || this.fanaleria || this.impelettrico || this.impfrenante || this.lamieratiesterni || this.lamieratiinterni || this.partimotore || this.scarico || this.selleria || this.sicurezza || this.sterzo || this.sterzo || this.termico) {
+    if (this.condizioni || this.marca || this.modello || this.versione || this.allestimentiesterni || this.assale || this.trasmissione || this.cristalli || this.fanaleria || this.impelettrico || this.impfrenante || this.lamieratiesterni || this.lamieratiinterni || this.partimotore || this.scarico || this.selleria || this.sicurezza || this.sterzo || this.sterzo || this.termico) {
       this.risultatiFiltrati = this.autoModels.filter((model: AutoModel) => {
+        const hasCondizioniMatch = !this.condizioni || model.condizioni === this.condizioni;
         const hasMarcaMatch = !this.marca || model.marca === this.marca;
         const hasModelloMatch = !this.modello || model.modello === this.modello;
         const hasVersioneMatch = !this.versione || model.versione === this.versione;
@@ -271,7 +274,7 @@ export class ProdSearchPageComponent {
         const hasSterzoMatch = !this.sterzo || model.sterzo === this.sterzo;
         const hasTermicoMatch = !this.termico || model.termico === this.termico;
 
-        return hasMarcaMatch && hasModelloMatch && hasVersioneMatch && hasAllestimentiesterniMatch && hasFanaleriaMatch && hasAssaleMatch && hasTrasmissioneMatch && hasCristalliMatch && hasImpelettricoMatch && hasImpfrenanteMatch && hasLamieratiesterniMatch && hasLamieratiinterniMatch && hasPartimotoreMatch && hasScaricoMatch && hasSelleriaMatch && hasSicurezzaMatch && hasSterzoMatch && hasTermicoMatch;
+        return hasCondizioniMatch && hasMarcaMatch && hasModelloMatch && hasVersioneMatch && hasAllestimentiesterniMatch && hasFanaleriaMatch && hasAssaleMatch && hasTrasmissioneMatch && hasCristalliMatch && hasImpelettricoMatch && hasImpfrenanteMatch && hasLamieratiesterniMatch && hasLamieratiinterniMatch && hasPartimotoreMatch && hasScaricoMatch && hasSelleriaMatch && hasSicurezzaMatch && hasSterzoMatch && hasTermicoMatch;
       });
     } else {
       this.risultatiFiltrati = this.autoModels;
@@ -295,5 +298,14 @@ export class ProdSearchPageComponent {
     } else {
       this.titolo = 'Tutti i prodotti';
     }
+  }
+
+  showCodeHTML(index: number) {
+    this.cartService.showCodeHTML = true;
+    this.cartService.currentIndex = index;
+    this.cartService.condizioni = this.condizioni
+    console.log('condizioni:',this.condizioni)
+    console.log('condizioni:',this.marca)
+
   }
 }

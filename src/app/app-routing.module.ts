@@ -30,8 +30,7 @@ const routes: Routes = [
   {path: 'ricambi', component: VenditaComponent},
   {path: 'vendita', component: VenditaAutoComponent},
   {path: 'tendina', component: TendinaComponent},
-  {path: 'searchpage', component: ProdSearchPageComponent, children : [
-    {path: ':id', component : ProdPageComponent}]},
+  {path: 'searchpage', component: ProdSearchPageComponent},
   {path: 'product', component: ProdPageComponent},
   {path: 'carrello', component: CarrelloProdComponent},
   {path: 'registration', component: RegisterformComponent},

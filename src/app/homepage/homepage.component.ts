@@ -68,9 +68,9 @@ getFilteredVersion(): AutoModel[] {
     let queryParams: { [key: string]: string } = {};
 
     if (this.changecolor) {
-      queryParams = { condizioni: 'usato' };
+      queryParams['condizioni'] = 'usato';
     } else {
-      queryParams = { condizioni: 'nuovo' };
+      queryParams['condizioni'] = 'nuovo';
     }
 
     if (this.marca) {

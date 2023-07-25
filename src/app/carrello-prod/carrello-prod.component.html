@@ -8,11 +8,28 @@
     <p>Sede</p>
     <p>Qualità</p>
   </div>
-  <div class="cartcard">
+  <div class="cartcard" *ngIf="cartService.showCodeHTML && cartService.currentIndex === 0 && cartService.condizioni === 'usato'">
+      <div class="cartgeneral">
+        <img src="assets/prova.jpg" alt="img not load">
+        <p class="carttitle">Fanale posteriore destro</p>
+        <p class="cartspecific">Daewoo - PROVA MATIZ  usato Chevrolet (05>07<)(07>09<) 800 Ber. 5p/b/796cc</p>
+      </div>
+      <div class="cartinfo">
+        <p>700€</p>
+      </div>
+      <div class="cartinfo">
+        <p>Novara</p>
+      </div>
+      <div class="cartinfo">
+        <p>eccellente</p>
+      </div>
+      <button class="deleteitem" (click)="unShowCodeHTML()">X</button>
+  </div>
+  <div class="cartcard" *ngIf="cartService.showCodeHTML && cartService.currentIndex === 1 && cartService.condizioni === 'usato'">
     <div class="cartgeneral">
       <img src="assets/prova.jpg" alt="img not load">
       <p class="carttitle">Fanale posteriore destro</p>
-      <p class="cartspecific">Daewoo - Chevrolet MATIZ Chevrolet (05>07<)(07>09<) 800 Ber. 5p/b/796cc</p>
+      <p class="cartspecific">Daewoo - PROVA 2 usatoChevrolet (05>07<)(07>09<) 800 Ber. 5p/b/796cc</p>
     </div>
     <div class="cartinfo">
       <p>700€</p>
@@ -23,25 +40,8 @@
     <div class="cartinfo">
       <p>eccellente</p>
     </div>
-    <button class="deleteitem">X</button>
-  </div>
-  <div class="cartcard">
-    <div class="cartgeneral">
-      <img src="assets/prova.jpg" alt="img not load">
-      <p class="carttitle">Fanale posteriore destro</p>
-      <p class="cartspecific">Daewoo - Chevrolet MATIZ Chevrolet (05>07<)(07>09<) 800 Ber. 5p/b/796cc</p>
-    </div>
-    <div class="cartinfo">
-      <p>700€</p>
-    </div>
-    <div class="cartinfo">
-      <p>Novara</p>
-    </div>
-    <div class="cartinfo">
-      <p>eccellente</p>
-    </div>
-    <button class="deleteitem">X</button>
-  </div>
+    <button class="deleteitem" (click)="unShowCodeHTML()">X</button>
+</div>
   <img class="categories" src="assets/carrellonuovo.png" alt="">
   <div class="cartheader">
     <p class="bigger"><b>IL TUO CARRELLO</b></p>
@@ -49,28 +49,28 @@
     <p>Quantità</p>
     <p>Totale</p>
   </div>
-  <div class="cartcard">
-    <div class="cartgeneral">
-      <img src="assets/prova.jpg" alt="img not load">
-      <p class="carttitle">Fanale posteriore destro</p>
-      <p class="cartspecific">Daewoo - Chevrolet MATIZ Chevrolet (05>07<)(07>09<) 800 Ber. 5p/b/796cc</p>
-    </div>
-    <div class="cartinfo">
-      <p>700€</p>
-    </div>
-    <div class="cartinfo">
-      <p>Novara</p>
-    </div>
-    <div class="cartinfo">
-      <p>eccellente</p>
-    </div>
-    <button class="deleteitem">X</button>
+  <div class="cartcard" *ngIf="cartService.showCodeHTML && cartService.currentIndex === 0 && cartService.condizioni === 'nuovo'">
+      <div class="cartgeneral">
+        <img src="assets/prova.jpg" alt="img not load">
+        <p class="carttitle">Fanale posteriore destro</p>
+        <p class="cartspecific">Daewoo - PROVA nuovo MATIZ Chevrolet (05>07<)(07>09<) 800 Ber. 5p/b/796cc</p>
+      </div>
+      <div class="cartinfo">
+        <p>700€</p>
+      </div>
+      <div class="cartinfo">
+        <p>Novara</p>
+      </div>
+      <div class="cartinfo">
+        <p>eccellente</p>
+      </div>
+      <button class="deleteitem" (click)="unShowCodeHTML()">X</button>
   </div>
-  <div class="cartcard">
+  <div class="cartcard" *ngIf="cartService.showCodeHTML && cartService.currentIndex === 1 && cartService.condizioni === 'nuovo'">
     <div class="cartgeneral">
       <img src="assets/prova.jpg" alt="img not load">
       <p class="carttitle">Fanale posteriore destro</p>
-      <p class="cartspecific">Daewoo - Chevrolet MATIZ Chevrolet (05>07<)(07>09<) 800 Ber. 5p/b/796cc</p>
+      <p class="cartspecific">Daewoo - PROVA 2 nuovo Chevrolet (05>07<)(07>09<) 800 Ber. 5p/b/796cc</p>
     </div>
     <div class="cartinfo">
       <p>700€</p>
@@ -81,7 +81,7 @@
     <div class="cartinfo">
       <p>eccellente</p>
     </div>
-    <button class="deleteitem">X</button>
+    <button class="deleteitem" (click)="unShowCodeHTML()">X</button>
   </div>
   <div class="carttotal">totale carrello: <b class="totalprice">500€</b><i class="piccolo">+spedizione</i>
   <br>

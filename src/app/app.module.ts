@@ -25,6 +25,7 @@ import { RouterModule } from '@angular/router';
 import { ProdPageComponent } from './prod-page/prod-page.component';
 import { CarrelloProdComponent } from './carrello-prod/carrello-prod.component';
 import { RegisterformComponent } from './registerform/registerform.component';
+import { CartserviceService } from './service/cartservice.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { RegisterformComponent } from './registerform/registerform.component';
     RouterModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [CartserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
