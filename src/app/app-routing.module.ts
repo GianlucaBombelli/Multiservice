@@ -32,7 +32,7 @@ const routes: Routes = [
   {path: 'tendina', component: TendinaComponent},
   {path: 'searchpage', component: ProdSearchPageComponent, children : [
     {path: ':id', component : ProdPageComponent}]},
-  {path: 'prova', component: ProdPageComponent},
+  {path: 'product', component: ProdPageComponent},
   {path: 'carrello', component: CarrelloProdComponent},
   {path: 'registration', component: RegisterformComponent},
 
