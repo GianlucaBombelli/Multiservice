@@ -134,3 +134,9 @@
   height: 20px;
   transform: translate(5px, -5px);
 }
+
+.emptymessage {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}

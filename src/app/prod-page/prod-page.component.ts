@@ -30,4 +30,26 @@ export class ProdPageComponent {
   toggleMoreInfo() {
     this.mostraMoreInfo = !this.mostraMoreInfo;
   }
+
+  immaginiSmall: string[] = [
+    'assets/prova1.png',
+    'assets/prova2.png',
+    'assets/prova3.png'
+    // Aggiungi altre sorgenti delle immagini small se necessario
+  ];
+
+  immagineAttuale: string = 'assets/prova.jpg';
+
+  cambiaImmagine(indice: number) {
+    // Ottieni la sorgente dell'immagine "smallimg" cliccata
+    const sorgenteImmagineCliccata = this.immaginiSmall[indice];
+
+    // Salva la sorgente dell'immagine "bigimg" corrente
+    const sorgenteImmagineCorrente = this.immagineAttuale;
+
+    // Imposta sia l'immagine corrente per "bigimg" che per "smallimg"
+    this.immagineAttuale = sorgenteImmagineCliccata;
+    this.immaginiSmall[indice] = sorgenteImmagineCorrente;
+  }
+
 }

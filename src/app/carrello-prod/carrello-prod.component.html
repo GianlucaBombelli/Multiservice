@@ -8,6 +8,9 @@
     <p>Sede</p>
     <p>Qualità</p>
   </div>
+  <div *ngIf="cartService.showCodeHTML=== false " class="emptymessage">
+    Aggiungi nuovi articoli al carrello
+  </div>
   <div class="cartcard" *ngIf="cartService.showCodeHTML && cartService.currentIndex === 0 && cartService.condizioni === 'usato'">
       <div class="cartgeneral">
         <img src="assets/prova.jpg" alt="img not load">
@@ -49,6 +52,9 @@
     <p>Quantità</p>
     <p>Totale</p>
   </div>
+  <div *ngIf="cartService.showCodeHTML=== false" class="emptymessage">
+    Aggiungi nuovi articoli al carrello
+  </div>
   <div class="cartcard" *ngIf="cartService.showCodeHTML && cartService.currentIndex === 0 && cartService.condizioni === 'nuovo'">
       <div class="cartgeneral">
         <img src="assets/prova.jpg" alt="img not load">
@@ -83,7 +89,7 @@
     </div>
     <button class="deleteitem" (click)="unShowCodeHTML()">X</button>
   </div>
-  <div class="carttotal">totale carrello: <b class="totalprice">500€</b><i class="piccolo">+spedizione</i>
+  <div class="carttotal">totale carrello: <b class="totalprice">700€</b><i class="piccolo">+spedizione</i>
   <br>
   <p class="paymetod">Modalità di pagamento: <img class="paylogo" src="assets/simbols/stripe-logo.svg" alt=""></p> <button class="checkout"><b>Paga ora</b></button>
   </div>

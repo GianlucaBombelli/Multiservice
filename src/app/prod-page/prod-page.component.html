@@ -4,10 +4,7 @@
   <div class="prodleft">
     <img class="bigimg" [src]="immagineAttuale" alt="img not load">
     <div class="prodimg">
-      <img src="assets/prova.jpg" alt="img not load" class="smallimg" data-index="0">
-      <img src="assets/prova.jpg" alt="img not load" class="smallimg" data-index="1">
-      <img src="assets/prova.jpg" alt="img not load" class="smallimg" data-index="2">
-    </div>
+      <img *ngFor="let immagine of immaginiSmall; let i = index" [src]="immagine" alt="img not load" class="smallimg" (click)="cambiaImmagine(i)">    </div>
     <div class="prodhelp">
       <div class="sezionehelp">
         <h3 (click)="toggleSpedizione()" [@slideUpDown]>come funziona la spedizione?<i class="fa-solid fa-chevron-down"></i></h3>

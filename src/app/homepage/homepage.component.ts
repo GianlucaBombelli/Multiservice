@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VeicoliserviceService } from '../service/veicoliservice.service';
 import { Router } from '@angular/router';
 
@@ -14,8 +14,12 @@ interface AutoModel {
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit{
 
+  ngOnInit() {
+    this.autoModels = this.VeicoliserviceService.getAutovetture();
+    this.slideShow();
+  }
 
 getFilteredModels(): AutoModel[] {
   return this.autoModels.filter((model: { marca: string; }) => model.marca === this.marca);
@@ -26,9 +30,9 @@ getFilteredVersion(): AutoModel[] {
 
   activeIndex = 0;
   slides = [
-    { image: 'assets/provacarosello.png', alt: 'Flyers 1' },
-    { image: 'assets/provacarosello1.png', alt: 'Flyers 1' },
-    { image: 'assets/provacarosello2.png', alt: 'Flyers 1' },
+    { image: 'assets/provacarosello.jpg', alt: 'Flyers 1' },
+    { image: 'assets/provacarosello1.jpg', alt: 'Flyers 2' },
+    { image: 'assets/provacarosello2.jpg', alt: 'Flyers 3' },
   ];
 
   prevSlide() {
@@ -110,10 +114,6 @@ getFilteredVersion(): AutoModel[] {
 
   constructor(private VeicoliserviceService: VeicoliserviceService, private router: Router) { }
 
-  ngOnInit() {
-    this.slideShow();
-      this.autoModels = this.VeicoliserviceService.getAutovetture()
-  }
 
 }
 
