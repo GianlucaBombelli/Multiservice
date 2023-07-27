@@ -7,8 +7,8 @@ export class VeicoliserviceService {
 
   autoModels = [
     { marca: "AIXAM", modello: "400", versione: "Versione 1"},
-    { condizioni: "nuovo", marca: "OPEL", modello: "ASTRA «G» (1998)", versione: "1.7 CDTi, 16v. Berlina, 5 p.", motore: "Z17DTL", targa: "CK306KB", titolo: "prodotto", descrizione: "AutoDiProvenienza", price: "10", disponibile: "disponibile"},
-    { condizioni: "usato", marca: "OPEL", modello: "ASTRA «G» (1998)", versione: "1.7 CDTi, 16v. Berlina, 5 p.", motore: "Z17DTL", targa: "CK306KB", titolo: "prodotto", descrizione: "AutoDiProvenienza", price: "10", disponibile: "chiedere per disponibilità"},
+    { condizioni: "nuovo", marca: "OPEL", modello: "ASTRA «G» (1998)", versione: "1.7 CDTi, 16v. Berlina, 5 p.", motore: "z17dtl", targa: "ck306kb", titolo: "prodotto", descrizione: "AutoDiProvenienza", price: "10", disponibile: "disponibile"},
+    { condizioni: "usato", marca: "OPEL", modello: "ASTRA «G» (1998)", versione: "1.7 CDTi, 16v. Berlina, 5 p.", motore: "z17dtl", targa: "ck306kb", titolo: "prodotto", descrizione: "AutoDiProvenienza", price: "10", disponibile: "chiedere per disponibilità"},
     { marca: "ALFA ROMEO", modello: "75 (1985)", versione: "Versione 2", price: 10, disponibile: "true", allestimentiesterni: "true", fanaleria: "true", carburante: "benzina" },
     { marca: "ALFA ROMEO", modello: "145 (1995)", versione: "Versione 3", allestimentiesterni: "true", price: 500, carburante: "gasolio", trasmissione: "true" },
     { marca: "ALFA ROMEO", modello: "146 (1995)", versione: "Versione 3", fanaleria: "true", carburante: "gpl" },
