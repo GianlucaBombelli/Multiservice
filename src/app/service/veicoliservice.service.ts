@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 export class VeicoliserviceService {
 
   autoModels = [
-    { marca: "AIXAM", modello: "400", versione: "Versione 1" },
+    { condizioni: "nuovo", marca: "AIXAM", modello: "400", versione: "Versione 1", motore: "123abc123", targa: "ab123cd" },
+    { condizioni: "usato", marca: "AIXAM", modello: "500elimina", versione: "Versione 1", motore: "123abc123", targa: "ab123cd" },
     { condizioni: "nuovo", marca: "ALFA ROMEO", modello: "75 (1985)", versione: "Versione 2", price: 10, disponibile: "true", allestimentiesterni: "true", fanaleria: "true", carburante: "benzina" },
     { condizioni: "nuovo", marca: "ALFA ROMEO", modello: "145 (1995)", versione: "Versione 3", allestimentiesterni: "true", price: 500, carburante: "gasolio", trasmissione: "true" },
     { condizioni: "nuovo", marca: "ALFA ROMEO", modello: "146 (1995)", versione: "Versione 3", fanaleria: "true", carburante: "gpl" },

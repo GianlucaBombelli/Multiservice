@@ -7,6 +7,8 @@ interface AutoModel {
   condizioni: string;
   marca: string;
   modello: string;
+  targa: string;
+  motore: string;
   versione: string;
   allestimentiesterni: string;
   assale: string;
@@ -23,6 +25,15 @@ interface AutoModel {
   sicurezza: string;
   sterzo: string;
   termico: string;
+  benz: string;
+  gas: string;
+  gpl: string;
+  metano: string;
+  elet: string;
+  benzgpl: string;
+  gasgpl: string;
+  benzelet: string;
+  gaselet: string;
   price: number;
 }
 
@@ -56,6 +67,15 @@ export class ProdSearchPageComponent {
   sicurezza: string = '';
   sterzo: string = '';
   termico: string = '';
+  benz: string = '';
+  gas: string = '';
+  gpl: string = '';
+  metano: string = '';
+  elet: string = '';
+  benzgpl: string = '';
+  gasgpl: string = '';
+  benzelet: string = '';
+  gaselet: string = '';
   //altri parametri
   risultatiFiltrati: AutoModel[] = [];
   numeroRisultati: number = 0;
@@ -96,7 +116,9 @@ export class ProdSearchPageComponent {
         (!this.selleria || model.selleria === this.selleria) &&
         (!this.sicurezza || model.sicurezza === this.sicurezza) &&
         (!this.sterzo || model.sterzo === this.sterzo) &&
-        (!this.termico || model.termico === this.termico)
+        (!this.termico || model.termico === this.termico) &&
+        (!this.benz || model.benz === this.benz) &&
+        (!this.gas || model.gas === this.gas)
       );
     });
   } else {
@@ -232,6 +254,78 @@ export class ProdSearchPageComponent {
       }
     }
 
+    if (category === 'benz') {
+      if (this.benz === '') {
+        this.benz = 'true';
+      } else {
+        this.benz = '';
+      }
+    }
+
+    if (category === 'gas') {
+      if (this.gas === '') {
+        this.gas = 'true';
+      } else {
+        this.gas = '';
+      }
+    }
+
+    if (category === 'gpl') {
+      if (this.gpl === '') {
+        this.gpl = 'true';
+      } else {
+        this.gpl = '';
+      }
+    }
+
+    if (category === 'metano') {
+      if (this.metano === '') {
+        this.metano = 'true';
+      } else {
+        this.metano = '';
+      }
+    }
+
+    if (category === 'elet') {
+      if (this.elet === '') {
+        this.elet = 'true';
+      } else {
+        this.elet = '';
+      }
+    }
+
+    if (category === 'benzgpl') {
+      if (this.benzgpl === '') {
+        this.benzgpl = 'true';
+      } else {
+        this.benzgpl = '';
+      }
+    }
+
+    if (category === 'gasgpl') {
+      if (this.gasgpl === '') {
+        this.gasgpl = 'true';
+      } else {
+        this.gasgpl = '';
+      }
+    }
+
+    if (category === 'benzelet') {
+      if (this.benzelet === '') {
+        this.benzelet = 'true';
+      } else {
+        this.benzelet = '';
+      }
+    }
+
+    if (category === 'gaselet') {
+      if (this.gaselet === '') {
+        this.gaselet = 'true';
+      } else {
+        this.gaselet = '';
+      }
+    }
+
     this.updateFilteredResults();
   }
 
@@ -245,6 +339,8 @@ export class ProdSearchPageComponent {
       this.marca = params['marca'] || '';
       this.modello = params['modello'] || '';
       this.versione = params['versione'] || '';
+      this.targa = params['targa'] || '';
+      this.motore = params['motore'] || '';
 
       // Aggiorna i risultati filtrati all'apertura della pagina
       this.updateFilteredResults();
@@ -252,9 +348,11 @@ export class ProdSearchPageComponent {
   }
 
   updateFilteredResults() {
-    if (this.condizioni || this.marca || this.modello || this.versione || this.allestimentiesterni || this.assale || this.trasmissione || this.cristalli || this.fanaleria || this.impelettrico || this.impfrenante || this.lamieratiesterni || this.lamieratiinterni || this.partimotore || this.scarico || this.selleria || this.sicurezza || this.sterzo || this.sterzo || this.termico) {
+    if (this.condizioni || this.targa || this.motore || this.marca || this.modello || this.versione || this.allestimentiesterni || this.assale || this.trasmissione || this.cristalli || this.fanaleria || this.impelettrico || this.impfrenante || this.lamieratiesterni || this.lamieratiinterni || this.partimotore || this.scarico || this.selleria || this.sicurezza || this.sterzo || this.sterzo || this.termico) {
       this.risultatiFiltrati = this.autoModels.filter((model: AutoModel) => {
         const hasCondizioniMatch = !this.condizioni || model.condizioni === this.condizioni;
+        const hasTargaMatch = !this.targa || model.targa === this.targa;
+        const hasMotoreMatch = !this.motore || model.motore === this.motore;
         const hasMarcaMatch = !this.marca || model.marca === this.marca;
         const hasModelloMatch = !this.modello || model.modello === this.modello;
         const hasVersioneMatch = !this.versione || model.versione === this.versione;
@@ -273,8 +371,9 @@ export class ProdSearchPageComponent {
         const hasSicurezzaMatch = !this.sicurezza || model.sicurezza === this.sicurezza;
         const hasSterzoMatch = !this.sterzo || model.sterzo === this.sterzo;
         const hasTermicoMatch = !this.termico || model.termico === this.termico;
+        const hasBenzMatch = !this.benz || model.benz === this.benz;
 
-        return hasCondizioniMatch && hasMarcaMatch && hasModelloMatch && hasVersioneMatch && hasAllestimentiesterniMatch && hasFanaleriaMatch && hasAssaleMatch && hasTrasmissioneMatch && hasCristalliMatch && hasImpelettricoMatch && hasImpfrenanteMatch && hasLamieratiesterniMatch && hasLamieratiinterniMatch && hasPartimotoreMatch && hasScaricoMatch && hasSelleriaMatch && hasSicurezzaMatch && hasSterzoMatch && hasTermicoMatch;
+        return hasCondizioniMatch && hasTargaMatch && hasMotoreMatch && hasMarcaMatch && hasModelloMatch && hasVersioneMatch && hasAllestimentiesterniMatch && hasFanaleriaMatch && hasAssaleMatch && hasTrasmissioneMatch && hasCristalliMatch && hasImpelettricoMatch && hasImpfrenanteMatch && hasLamieratiesterniMatch && hasLamieratiinterniMatch && hasPartimotoreMatch && hasScaricoMatch && hasSelleriaMatch && hasSicurezzaMatch && hasSterzoMatch && hasTermicoMatch && hasBenzMatch;
       });
     } else {
       this.risultatiFiltrati = this.autoModels;

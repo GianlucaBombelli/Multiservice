@@ -48,14 +48,14 @@ h3 {
   border-radius: 10px 0px -1vw -10px;
   position: relative;
   padding: 5px;
-  z-index: 0;
+  z-index: 1;
 
 }
 
 h3::before {
   content: "";
   position: absolute;
-
+  z-index: -2;
   background-color: transparent;
   bottom: -50px;
   height: 50px;
@@ -74,6 +74,7 @@ h3::after {
   width: 25px;
   border-top-right-radius: 1vw;
   box-shadow: 0 -25px 0 0 #595959;
+  z-index: -1;
 }
 
 .categories {
@@ -224,4 +225,23 @@ li {
   width: 100%;
   text-decoration: none;
   color: #ececec;
+}
+
+.addtocart {
+  width: 12vw;
+  height: 3vw;
+  margin: auto;
+  border-radius: 1vw;
+  background: #a3ce0b;
+  font-family: 'BoldFont';
+  font-size: 18px;
+  border: none;
+  color: #ececec;
+  transition: background-color 0.1s, transform 0.1s, font-size 0.1s;
+}
+
+.addtocart:active {
+  background-color: #84a50a;
+  transform: scale(0.98);
+  font-size: 18px;
 }

@@ -25,3 +25,8 @@ footer > img {
 .legal-info > p {
   font-family: 'LightFont';
 }
+
+a {
+  text-decoration: none;
+  color: #ececec;
+}

@@ -22,9 +22,9 @@
     <div class="div3">
       <h2>TARGHE DISPONIBILI</h2>
       <form class="plate" name="plate" (submit)="onSubmitPlate()">
-        <input class="ricercatarga" maxlength="7" autocomplete="off" name="targa" placeholder="inserisci qui la targa..." [(ngModel)]="targa">
+        <input class="ricercatarga" maxlength="8" autocomplete="off" name="targa" placeholder="inserisci qui la targa..." [(ngModel)]="targa">
         <br>
-        <button class="cercatarga">cerca</button>
+        <button type="submit" class="cercatarga">cerca</button>
       </form>
     </div>
     <div class="div4">
@@ -130,9 +130,8 @@
         </datalist>
       </div>
       <div class="bottoni">
-        <button class="cerca" type="submit">cerca
-          </button>
-        <button class="reset">reset</button>
+        <button class="cerca" type="submit">cerca</button>
+        <button class="reset" type="button" (click)="resetParameters()">reset</button>
       </div>
       </form>
     </div>

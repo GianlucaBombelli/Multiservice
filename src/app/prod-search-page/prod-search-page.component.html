@@ -27,15 +27,15 @@
     <button class="categories" [ngClass]="{'activecategories': sterzo === 'true'}" (click)="filterByCategory('sterzo')">Sterzo</button>
     <button class="categories" [ngClass]="{'activecategories': termico === 'true'}" (click)="filterByCategory('termico')">Termico</button>
     <h4>Tipo Carburante</h4>
-    <button class="categories">Benzina</button>
-    <button class="categories">Gasolio</button>
-    <button class="categories">GPL</button>
-    <button class="categories">Metano</button>
-    <button class="categories">Elettrico</button>
-    <button class="categories">Benzina/GPL</button>
-    <button class="categories">Gasolio/GPL</button>
-    <button class="categories">Benzina/Elettrico</button>
-    <button class="categories">Gasolio/Elettrico</button>
+    <button class="categories" [ngClass]="{'activecategories': benz === 'true'}" (click)="filterByCategory('benz')">Benzina</button>
+    <button class="categories" [ngClass]="{'activecategories': gas === 'true'}" (click)="filterByCategory('gas')">Gasolio</button>
+    <button class="categories" [ngClass]="{'activecategories': gpl === 'true'}" (click)="filterByCategory('gpl')">GPL</button>
+    <button class="categories" [ngClass]="{'activecategories': metano === 'true'}" (click)="filterByCategory('metano')">Metano</button>
+    <button class="categories" [ngClass]="{'activecategories': elet === 'true'}" (click)="filterByCategory('elet')">Elettrico</button>
+    <button class="categories" [ngClass]="{'activecategories': benzgpl === 'true'}" (click)="filterByCategory('benzgpl')">Benzina/GPL</button>
+    <button class="categories" [ngClass]="{'activecategories': gasgpl === 'true'}" (click)="filterByCategory('gasgpl')">Gasolio/GPL</button>
+    <button class="categories" [ngClass]="{'activecategories': benzelet === 'true'}" (click)="filterByCategory('benzelet')">Benzina/Elettrico</button>
+    <button class="categories" [ngClass]="{'activecategories': gaselet === 'true'}" (click)="filterByCategory('gaselet')">Gasolio/Elettrico</button>
     <h4>Tipo Cambio</h4>
     <button class="categories">Manuale</button>
     <button class="categories">Automatico</button>
@@ -166,7 +166,7 @@
         <div class="information">
           <div><p class="price">{{ risultato.price ? risultato.price + '€' : 'Contattaci' }}</p></div>
           <div class="border"><p>chiedere per disponibilità</p></div>
-          <button (click)="showCodeHTML(i)">Aggiungi al carrello</button>
+          <button class="addtocart" (click)="showCodeHTML(i)">Aggiungi al carrello</button>
         </div>
 
     </div>

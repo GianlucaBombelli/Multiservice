@@ -7,6 +7,8 @@ interface AutoModel {
   marca: string;
   modello: string;
   versione: string;
+  targa: string;
+  motore: string;
 }
 
 @Component({
@@ -93,23 +95,43 @@ getFilteredVersion(): AutoModel[] {
   }
 
   onSubmitMotor() {
+    let queryParams: { [key: string]: string } = {};
+
     if (this.changecolor) {
-      this.condizioni = 'usato';
+      queryParams['condizioni'] = 'usato';
     } else {
-      this.condizioni = 'nuovo';
+      queryParams['condizioni'] = 'nuovo';
     }
-    console.log('Condizioni:', this.condizioni,);
-    console.log('Motore:', this.motore,);
+
+    if (this.motore) {
+      queryParams['motore'] = this.motore;
+    }
+
+    this.router.navigate(['/searchpage'], { queryParams: queryParams });
   }
 
   onSubmitPlate() {
+    let queryParams: { [key: string]: string } = {};
+
     if (this.changecolor) {
-      this.condizioni = 'usato';
+      queryParams['condizioni'] = 'usato';
     } else {
-      this.condizioni = 'nuovo';
+      queryParams['condizioni'] = 'nuovo';
     }
-    console.log('Condizioni:', this.condizioni,);
+
+    if (this.targa) {
+      queryParams['targa'] = this.targa;
+    }
+
     console.log('Targa:', this.targa,);
+
+    this.router.navigate(['/searchpage'], { queryParams: queryParams });
+  }
+
+  resetParameters() {
+    this.marca = '';
+    this.modello = '';
+    this.versione = '';
   }
 
   constructor(private VeicoliserviceService: VeicoliserviceService, private router: Router) { }
