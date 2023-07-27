@@ -37,11 +37,11 @@
     <button class="categories" [ngClass]="{'activecategories': benzelet === 'true'}" (click)="filterByCategory('benzelet')">Benzina/Elettrico</button>
     <button class="categories" [ngClass]="{'activecategories': gaselet === 'true'}" (click)="filterByCategory('gaselet')">Gasolio/Elettrico</button>
     <h4>Tipo Cambio</h4>
-    <button class="categories">Manuale</button>
-    <button class="categories">Automatico</button>
+    <button class="categories" [ngClass]="{'activecategories': manuale === 'true'}" (click)="filterByCategory('manuale')">Manuale</button>
+    <button class="categories" [ngClass]="{'activecategories': automatico === 'true'}" (click)="filterByCategory('automatico')">Automatico</button>
     <h4>Posizione di guida</h4>
-    <button class="categories">Sinistra</button>
-    <button class="categories">Destra</button>
+    <button class="categories" [ngClass]="{'activecategories': guidasx === 'true'}" (click)="filterByCategory('guidasx')">Sinistra</button>
+    <button class="categories" [ngClass]="{'activecategories': guidadx === 'true'}" (click)="filterByCategory('guidadx')">Destra</button>
 
 
 
@@ -154,18 +154,21 @@
         <p>Range prezzo: {{prezzoMinimo !== 0 ? prezzoMinimo + '€' : '0€'}} - {{ prezzoMassimo !== 0 ? prezzoMassimo + '€' : '0€'}}</p>
       </div>
       </form>
+    <div class="no-results" *ngIf="risultatiFiltrati?.length === 0">
+      <p>Nessun risultato trovato</p>
+    </div>
     <div class="cardauto" *ngFor="let risultato of risultatiFiltrati, let i = index">
       <a routerLink="/product">
         <img src="assets/prova.jpg" alt="" class="immagine">
       </a>
         <a routerLink="/product">
         <div class="textcontainer">
-          <h2 class="prodtitle">{{risultato.marca}}</h2>
-          <p class="description">{{risultato.modello}}</p>
+          <h2 class="prodtitle">{{risultato.titolo}}</h2>
+          <p class="description">{{risultato.descrizione}}</p>
         </div></a>
         <div class="information">
           <div><p class="price">{{ risultato.price ? risultato.price + '€' : 'Contattaci' }}</p></div>
-          <div class="border"><p>chiedere per disponibilità</p></div>
+          <div class="border"><p>{{ risultato.disponibile }}</p></div>
           <button class="addtocart" (click)="showCodeHTML(i)">Aggiungi al carrello</button>
         </div>
 

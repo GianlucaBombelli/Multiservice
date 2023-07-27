@@ -10,6 +10,9 @@ interface AutoModel {
   targa: string;
   motore: string;
   versione: string;
+  titolo: string;
+  descrizione: string;
+  disponibile: string;
   allestimentiesterni: string;
   assale: string;
   trasmissione: string;
@@ -34,6 +37,10 @@ interface AutoModel {
   gasgpl: string;
   benzelet: string;
   gaselet: string;
+  manuale: string;
+  automatico: string;
+  guidasx: string;
+  guidadx: string;
   price: number;
 }
 
@@ -76,6 +83,11 @@ export class ProdSearchPageComponent {
   gasgpl: string = '';
   benzelet: string = '';
   gaselet: string = '';
+  manuale: string = '';
+  automatico: string = '';
+  guidasx: string = '';
+  guidadx: string = '';
+
   //altri parametri
   risultatiFiltrati: AutoModel[] = [];
   numeroRisultati: number = 0;
@@ -326,6 +338,38 @@ export class ProdSearchPageComponent {
       }
     }
 
+    if (category === 'manuale') {
+      if (this.manuale === '') {
+        this.manuale = 'true';
+      } else {
+        this.manuale = '';
+      }
+    }
+
+    if (category === 'automatico') {
+      if (this.automatico === '') {
+        this.automatico = 'true';
+      } else {
+        this.automatico = '';
+      }
+    }
+
+    if (category === 'guidasx') {
+      if (this.guidasx === '') {
+        this.guidasx = 'true';
+      } else {
+        this.guidasx = '';
+      }
+    }
+
+    if (category === 'guidadx') {
+      if (this.guidadx === '') {
+        this.guidadx = 'true';
+      } else {
+        this.guidadx = '';
+      }
+    }
+
     this.updateFilteredResults();
   }
 
@@ -372,8 +416,20 @@ export class ProdSearchPageComponent {
         const hasSterzoMatch = !this.sterzo || model.sterzo === this.sterzo;
         const hasTermicoMatch = !this.termico || model.termico === this.termico;
         const hasBenzMatch = !this.benz || model.benz === this.benz;
+        const hasGasMatch = !this.gas || model.gas === this.gas;
+        const hasGplMatch = !this.gpl || model.gpl === this.gpl;
+        const hasMetanoMatch = !this.metano || model.metano === this.metano;
+        const hasEletMatch = !this.elet || model.elet === this.elet;
+        const hasBenzgplMatch = !this.benzgpl || model.benzgpl === this.benzgpl;
+        const hasGasgplMatch = !this.gasgpl || model.gasgpl === this.gasgpl;
+        const hasBenzeletMatch = !this.benzelet || model.benzelet === this.benzelet;
+        const hasGaseletMatch = !this.gaselet || model.gaselet === this.gaselet;
+        const hasManualeMatch = !this.manuale || model.manuale === this.manuale;
+        const hasAutomaticoMatch = !this.automatico || model.automatico === this.automatico;
+        const hasGuidaSxMatch = !this.guidasx || model.guidasx === this.guidasx;
+        const hasGuidaDxMatch = !this.guidadx || model.guidadx === this.guidadx;
 
-        return hasCondizioniMatch && hasTargaMatch && hasMotoreMatch && hasMarcaMatch && hasModelloMatch && hasVersioneMatch && hasAllestimentiesterniMatch && hasFanaleriaMatch && hasAssaleMatch && hasTrasmissioneMatch && hasCristalliMatch && hasImpelettricoMatch && hasImpfrenanteMatch && hasLamieratiesterniMatch && hasLamieratiinterniMatch && hasPartimotoreMatch && hasScaricoMatch && hasSelleriaMatch && hasSicurezzaMatch && hasSterzoMatch && hasTermicoMatch && hasBenzMatch;
+        return hasCondizioniMatch && hasTargaMatch && hasMotoreMatch && hasMarcaMatch && hasModelloMatch && hasVersioneMatch && hasAllestimentiesterniMatch && hasFanaleriaMatch && hasAssaleMatch && hasTrasmissioneMatch && hasCristalliMatch && hasImpelettricoMatch && hasImpfrenanteMatch && hasLamieratiesterniMatch && hasLamieratiinterniMatch && hasPartimotoreMatch && hasScaricoMatch && hasSelleriaMatch && hasSicurezzaMatch && hasSterzoMatch && hasTermicoMatch && hasBenzMatch && hasGasMatch && hasGplMatch && hasMetanoMatch && hasEletMatch && hasBenzgplMatch && hasGasgplMatch && hasBenzeletMatch && hasGaseletMatch && hasManualeMatch && hasAutomaticoMatch && hasGuidaSxMatch && hasGuidaDxMatch;
       });
     } else {
       this.risultatiFiltrati = this.autoModels;

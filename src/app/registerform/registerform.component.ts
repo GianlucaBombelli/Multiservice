@@ -2,6 +2,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { passwordNotMatch } from './customvalidation/customvalidator.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registerform',
@@ -22,7 +23,7 @@ export class RegisterformComponent implements OnInit{
   registerForm!: FormGroup;
   registerFormAzienda!: FormGroup;
 
-  constructor () {}
+  constructor (private router: Router) {}
 
   ngOnInit (): void {
 
@@ -94,6 +95,7 @@ export class RegisterformComponent implements OnInit{
     } else {
       console.log('FormResults:',this.registerFormAzienda)
     }
+    this.router.navigate(['/home'], { state: { successMessage: true } });
   }
 
   checkboxValue: boolean = false;

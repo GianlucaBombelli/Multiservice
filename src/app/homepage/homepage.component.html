@@ -22,7 +22,7 @@
     <div class="div3">
       <h2>TARGHE DISPONIBILI</h2>
       <form class="plate" name="plate" (submit)="onSubmitPlate()">
-        <input class="ricercatarga" maxlength="8" autocomplete="off" name="targa" placeholder="inserisci qui la targa..." [(ngModel)]="targa">
+        <input class="ricercatarga" maxlength="8" autocomplete="off" name="targa" placeholder="inserisci qui la targa...(CK306KB)" [(ngModel)]="targa">
         <br>
         <button type="submit" class="cercatarga">cerca</button>
       </form>
@@ -32,7 +32,7 @@
       <div id="borderleft"></div>
       <h2 id="center">RICERCA TRAMITE MODELLO AUTO</h2>
       <div class="modelloauto">
-        <input class="auto" autocomplete="off" list="marca" id="brand" name="marca" placeholder="marca..." [(ngModel)]="marca">
+        <input class="auto" autocomplete="off" list="marca" id="brand" name="marca" placeholder="marca...(OPEL)" [(ngModel)]="marca">
           <datalist id="marca">
             <option value="AIXAM">
             <option value="ALFA ROMEO">
@@ -120,13 +120,15 @@
             <option value="YAMAHA">
             <option value="ZONTES">
           </datalist>
-          <input class="auto" autocomplete="off" list="modello" id="models" name="modello" placeholder="modello..." [(ngModel)]="modello">
+          <input class="auto" autocomplete="off" list="modello" id="models" name="modello" placeholder="modello...(ASTRA «G» (1998))" [(ngModel)]="modello">
           <datalist id="modello">
-              <option *ngFor="let model of getFilteredModels()" [value]="model.modello">
+            <option value="ASTRA «G» (1998)">
+            <!--<option *ngFor="let model of getFilteredModels()" [value]="model.modello">-->
           </datalist>
-        <input class="auto" autocomplete="off" list="versione" name="versione" placeholder="versione..." [(ngModel)]="versione">
+        <input class="auto" autocomplete="off" list="versione" name="versione" placeholder="versione...(1.7 CDTi, 16v. Berlina, 5 p.)" [(ngModel)]="versione">
         <datalist id="versione">
-          <option *ngFor="let model of getFilteredVersion()" [value]="model.versione">
+          <option value="1.7 CDTi, 16v. Berlina, 5 p.">
+          <!--<option *ngFor="let model of getFilteredVersion()" [value]="model.versione">-->
         </datalist>
       </div>
       <div class="bottoni">
@@ -138,7 +140,7 @@
     <div class="div5">
       <h2>RICERCA TRAMITE CODICE MOTORE</h2>
       <form class="motor" (submit)="onSubmitMotor()">
-        <input type="search" name="motore" class="motore" placeholder="Inserisci qui il codice motore..." [(ngModel)]="motore">
+        <input type="search" name="motore" class="motore" placeholder="Inserisci qui il codice motore... (Z17DTL)" [(ngModel)]="motore">
         <button class="cercamotore" type="submit">cerca</button>
       </form>
     </div>

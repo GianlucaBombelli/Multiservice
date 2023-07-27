@@ -37,6 +37,7 @@
   text-align: center;
   overflow: hidden;
   height: max-content;
+  margin-bottom: 20px;
 }
 
 .left > button {
@@ -243,5 +244,14 @@ li {
 .addtocart:active {
   background-color: #84a50a;
   transform: scale(0.98);
+  font-size: 18px;
+}
+
+.no-results {
+  text-align: center;
+}
+
+.no-results > p {
+  font-family: 'BoldFont';
   font-size: 18px;
 }
