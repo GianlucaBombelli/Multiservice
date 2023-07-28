@@ -50,7 +50,7 @@
 
 button:focus > .tenda {
   visibility: visible;
-  z-index: 1;
+  z-index: 5;
 }
 
 .link:not(:active) {
@@ -58,6 +58,7 @@ button:focus > .tenda {
   animation-duration: 0.5s;
   -webkit-animation-name: bounce;
   -webkit-animation-duration: 0.5s;
+  z-index: 5;
 }
 
 .social {

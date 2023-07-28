@@ -445,7 +445,7 @@ export class ProdSearchPageComponent {
 
   updateTitolo() {
     if (this.marca && this.modello) {
-      this.titolo = `${this.marca} ${this.modello}`;
+      this.titolo = `${this.marca} - ${this.modello}`;
     } else if (this.marca) {
       this.titolo = `${this.marca}`;
     } else if (this.modello) {
