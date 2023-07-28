@@ -264,6 +264,11 @@
 }
 
 ::placeholder {
+  color: #bebebe;
+  font-size: 16px;
+}
+
+.ricercatarga::placeholder {
   color: #595959;
   font-size: 16px;
 }

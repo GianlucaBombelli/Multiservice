@@ -139,11 +139,13 @@
           </datalist>
           <input class="auto" autocomplete="off" list="modello" id="models" name="modello" placeholder="modello..." [(ngModel)]="modello">
           <datalist id="modello">
-              <option *ngFor="let model of getFilteredModels()" [value]="model.modello">
+            <option value="ASTRA «G» (1998)">
+              <!--<option *ngFor="let model of getFilteredModels()" [value]="model.modello">-->
           </datalist>
         <input class="auto" autocomplete="off" list="versione" name="versione" placeholder="versione..." [(ngModel)]="versione">
         <datalist id="versione">
-          <option *ngFor="let model of getFilteredVersion()" [value]="model.versione">
+          <option value="1.7 CDTi, 16v. Berlina, 5 p.">
+          <!--<option *ngFor="let model of getFilteredVersion()" [value]="model.versione">-->
         </datalist>
       </div>
       <div class="bottoni">
