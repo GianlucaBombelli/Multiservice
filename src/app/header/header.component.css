@@ -27,7 +27,6 @@
   line-height: 8vw;
   text-decoration: none;
   list-style: none;
-  cursor: pointer;
 }
 
 .link > .service > i {
@@ -73,13 +72,11 @@ button:focus > .tenda {
   width: 25px;
   right: 1vw;
   top: 6vw;
+  z-index: 6;
 }
 
-#facebook {
-  position: absolute;
-  width: 25px;
-  right: 1vw;
-  top: 6.5vw;
+.instabtn {
+  z-index: 6;
 }
 
 a {
